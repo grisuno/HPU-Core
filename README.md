@@ -163,7 +163,18 @@ This formulation ensures that the target function possesses a rich spectral stru
 
 The neural network learns an approximation to the Hamiltonian operator through the universal approximation theorem extended to spectral representations. The weights evolve during training to align with the principal spectral components of the target function, resulting in an efficient representation that generalizes beyond the training examples.
 
-## Reproducibility
+## 6. Reproducibility
+
+Code and pretrained grokked models are publicly available:
+
+- Core Framework: [https://github.com/grisuno/agi](https://github.com/grisuno/agi)
+- Parity Cassette: [https://github.com/grisuno/algebra-de-grok](https://github.com/grisuno/algebra-de-grok)
+- Wave Cassette: [https://github.com/grisuno/1d_wave_equation_grokker](https://github.com/grisuno/1d_wave_equation_grokker)
+- Kepler Cassette: [https://github.com/grisuno/kepler_orbit_grokker](https://github.com/grisuno/kepler_orbit_grokker)
+- Pendulum Cassette: [https://github.com/grisuno/chaotic_pendulum_grokked](https://github.com/grisuno/chaotic_pendulum_grokked)
+- Ciclotron Cassette: [https://github.com/grisuno/supertopo3](https://github.com/grisuno/supertopo3)
+- MatMul 2x2 Cassette: [https://github.com/grisuno/matrixgrokker](https://github.com/grisuno/matrixgrokker)
+- HPU Hamiltonian Cassette: [https://github.com/grisuno/HPU-Core](https://github.com/grisuno/HPU-Core)
 
 All random seeds are fixed to ensure reproducibility:
 
