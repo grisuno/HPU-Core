@@ -1,0 +1,9 @@
+[model]
+source_resolution = 16
+checkpoint_path = "weights/model_checkpoint.pth"
+
+[target_resolutions]
+resolutions = [32, 64, 128, 256, 512]
+
+[output]
+save_dir = "zero_shot_expansions"
