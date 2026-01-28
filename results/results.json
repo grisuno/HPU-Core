@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "checkpoint": "crystal_checkpoints/latest.pth",
+    "epoch": 7196,
+    "timestamp": "2026-01-28T20:12:19.507539",
+    "calculation_version": "1.0.0"
+  },
+  "inputs": {
+    "lambda": 0.5,
+    "delta": 0.3687005937099457,
+    "alpha": 0.9977703634641194,
+    "mse": 1.0,
+    "val_acc": 1.0,
+    "grid_size": 16,
+    "learning_rate": 1e-05
+  },
+  "h_bar": {
+    "value": 2.8333084139654217,
+    "dimensionless": 0.3188592242247852,
+    "regime": "UNCONSTRAINED",
+    "methods": {
+      "uncertainty": 0.13594012780206643,
+      "action": 8.281799801893863,
+      "conductance": 1.0,
+      "information": 1.915493726165757
+    },
+    "weights": {
+      "w1": 0.25,
+      "w2": 0.25,
+      "w3": 0.25,
+      "w4": 0.25
+    }
+  },
+  "derived_constants": {
+    "c_effective_m_s": 8.054496431652461e+42,
+    "m_planck_kg": 5.847406155153067e+26,
+    "l_planck_m": 6.01578348801851e-70,
+    "t_planck_s": 7.468851143043231e-113,
+    "T_planck_K": 2.74762060619108e+135
+  },
+  "comparison_universe": {
+    "h_bar_ratio": 2.6866908145008975e+34,
+    "orders_of_magnitude": 34.42921769051869,
+    "m_planck_vs_sun": 0.0002940655959181213
+  }
+}
