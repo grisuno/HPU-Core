@@ -212,7 +212,7 @@ What remains valid is the methodology: treat neural networks as physical systems
 
 [3] Citation for Superposition as Lossy Compression: Title: Superposition as lossy compression, Authors: Bereska et al., arXiv 2024.
 
-[4] grisun0. Algorithmic Induction via Structural Weight Transfer (v11). Zenodo, 2025. https://doi.org/10.5281/zenodo.18072858
+[4] grisun0. Algorithmic Induction via Structural Weight Transfer (v13). Zenodo, 2025. https://doi.org/10.5281/zenodo.18072858
 
 
 ---
@@ -221,6 +221,7 @@ What remains valid is the methodology: treat neural networks as physical systems
 
 The checkpoint analyzed (epoch 7196, $\lambda = 7.504732 \times 10^{34}$) is available at:
 - Repository: https://github.com/grisuno/HPU-Core
+- Mining seeds: `mining_seeds.py`
 - Experiment: `experiment2.py`
 - Refinery: `refinamiento.py`
 - Last fase: `precision.py`
