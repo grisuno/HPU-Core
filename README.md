@@ -1,5 +1,5 @@
 # From Boltzmann Stochasticity to Hamiltonian Integrability: 
-# Emergence of Topological Crystals and Synthetic Planck Constants in HPU-Cores
+## Emergence of Topological Crystals and Synthetic Planck Constants in HPU-Cores
 
 **grisun0**  
 *January 29, 2026*
@@ -201,6 +201,7 @@ The honesty imperative requires stating: this is a single observation, not a val
 
 What remains valid is the methodology: treat neural networks as physical systems, measure their thermodynamic and topological properties, and report what the machine tells you without embellishment.
 
+In Strassen, ℏ emerges as a task-level algorithmic thermodynamic constant, invariant across training realizations. In contrast, within the HPU framework, ℏ becomes algorithm-dependent, encoding the effective action scale of the learning dynamics itself. This distinction motivates the notion of an algorithmic thermodynamics of learning, where constants are not universal but process-specific.
 ---
 
 ## References
