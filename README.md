@@ -333,273 +333,88 @@ Leyenda: ░ = menor δ (mejor candidato)
                  0.50 = ████████████████████████████████████████
 
 
-
-
-python3 topological_experiment.py crystal_checkpoints/latest.pth --output-dir topological_results
-2026-01-28 19:31:49 - Application - INFO - Starting Topological Crystal Characterization
-2026-01-28 19:31:49 - Application - INFO - Checkpoint: crystal_checkpoints/latest.pth
-2026-01-28 19:31:49 - Application - INFO - AVX512 available: True
-2026-01-28 19:31:49 - TopologicalExperiment - INFO - Loading checkpoint: crystal_checkpoints/latest.pth
-2026-01-28 19:31:49 - TopologicalExperiment - INFO - Loaded model from epoch 7196 with val_acc=1.0000
-[===========>..................]  37.5% | Stage: precision       | δ: 0.3687(+0.184) | α: 1.00 | Acc: 1.0000 | λ_max: +0.0000 | S: 0.00 | κ:   0 | ETA: 0.0m2026-01-28 19:31:49 - PrecisionRobustness - WARNING - Precision test failed for float16: Input type (float) and bias type (double) should be the same
-[==============================>] 100.0% | Stage: hysteresis      | δ: 0.3687(+0.043) | α: 1.00 | Acc: 1.0000 | λ_max: +0.0018 | S: 0.00 | κ:  31 | ETA: 0.0m
-2026-01-28 19:31:52 - Progress - INFO - Analysis completed in 0.0 minutes
-2026-01-28 19:31:52 - TopologicalExperiment - INFO - Checkpoint saved: topological_analysis/latest_analysis.pth
-2026-01-28 19:31:52 - TopologicalExperiment - INFO - Results saved to: topological_results/topological_analysis_20260128_193152.json
+❯ python3 get_meditions.py checkpoints/latest.pth
 
 ======================================================================
-TOPOLOGICAL ANALYSIS SUMMARY
+VERIFICANDO CHECKPOINT: checkpoints/latest.pth
+Epoch reportada: 1009
 ======================================================================
-Delta (max): 0.368701
-Alpha (purity): 1.00
-Validation Accuracy: 1.0000
-Max Lyapunov: +0.001751
-Marginal Stability: True
-Von Neumann Entropy: 0.0000
-Topologically Protected: True
-Precision Critical Threshold: 32
+
+/home/grisun0/tools/HPU-Core/get_meditions.py:558: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  return float(mi)
+
 ======================================================================
-❯ python3 test.py
-[HBarCalculator] Checkpoint cargado: epoch 7196
-  λ = 5.000000e-01
-  δ = 0.368701
-  α = 0.997770
-  MSE = 1.000000e+00
+REPORTE DE VERIFICACIÓN - HPU CRYSTALLOGRAPHY SYSTEM
+======================================================================
 
-================================================================================
-CÁLCULO DE CONSTANTE DE PLANCK EFECTIVA (ħ)
-================================================================================
+[INTEGRIDAD DE PESOS]
+  Válido: True ✓
 
-[PARÁMETROS DE ENTRADA]
-  Epoch: 7196
-  λ (lambda): 5.000000e-01
-  δ (delta): 0.368701
-  α (alpha): 0.997770
-  MSE: 1.000000e+00
-  Val Acc: 1.000000
+[MÉTRICAS DE VALIDACIÓN]
+  MSE: 0.003906
+  Accuracy: 1.0000
+  Max Error: 0.257566
 
-[RESULTADO PRINCIPAL]
-  ħ_efectiva = 3.574321e+00 [unidades del sistema]
-  ħ_adimensional = 4.022524e-01
-  Régimen: UNCONSTRAINED
+[MÉTRICAS DE DISCRETIZACIÓN]
+  Delta (max): 0.459318
+  Delta (mean): 0.353968
+  Alpha: 0.78
+  Is Crystal: False ✗
+  Purity Index: 0.5407
 
-[INTERPRETACIÓN FÍSICA]
-   Sin regularización significativa.
+[CRISTALOGRAFÍA AVANZADA]
+  κ (condición): inf
+  κ_q (cuántico): 9.62e+03
+  LC (complejidad local): 0.9846
+  Flujo de Poynting: 5.77e-01
+  Radiando: ✗
 
-[CONSTANTES FÍSICAS DERIVADAS]
-  v_luz_efectiva = 1.016104e+43 m/s
-    (ratio vs c: 3.389358e+34)
-  m_Planck_efectiva = 7.376714e+26 kg
-  l_Planck_efectiva = 4.768618e-70 m
-  t_Planck_efectiva = 4.693042e-113 s
-  T_Planck_efectiva = 7.616214e+112 K
+[TERMODINÁMICA]
+  T_efectiva: 0.00e+00
+  C_v (calor específico): 0.00e+00
+  Fase: subcritical_crystal
+  Transición: ✗
+  Presión alg.: inf
+  ħ_alg: 1.00e-06
+  I_mutua: -0.0000
 
-[COMPARACIÓN CON ESCALA DE PLANCK (SI)]
-  ħ_sistema / ħ_SI = 3.389358e+34
-  Órdenes de magnitud: +34.53
-  → Tu sistema tiene ħ 35 órdenes MAYOR que el universo físico
-    (Efectos cuánticos 'macroscópicos' emergentes)
+[ESPECTROSCOPÍA]
+  Entropía espectral: 12.8688
+  Picos de Bragg: 29317
+  Estructura cristalina: ✓
+  Energía libre G: 0.0436
+  Estable: ✗
 
-[VERIFICACIONES DE CONSISTENCIA]
-  uncertainty_principle_satisfied: ✓
-  action_positive: True
-  energy_consistent: ✓
-  omega_realistic: True
-  dimensionless_finite: True
-  methods_agreement: {'agreement_ratio': np.float64(-0.18438185501301585), 'std_relative': np.float64(1.1843818550130158), 'range_orders': np.float64(2.085807049761612)}
+[POTENCIAL TERMODINÁMICO]
+  F (Helmholtz): 0.0436
+  G (Gibbs): 458966.1689
+  Estable: ✗
 
-================================================================================
-❯ python3 test.py
+[COMPARACIÓN CON CHECKPOINT]
+  delta: stored=0.459318, computed=0.459318 diff=0.00e+00 ✓
+  alpha: stored=0.778013, computed=0.778013 diff=0.00e+00 ✓
+  val_acc: stored=1.000000, computed=1.000000 diff=0.00e+00 ✓
+  kappa: stored=1.000000, computed=inf diff=inf ✗
 
-================================================================================
-CONSTANTE DE PLANCK EFECTIVA - EPOCH 7196
-================================================================================
+[SCORE DE SALUD]
+  Puntuación: 80.0/100
+  Estado: DEGRADED
+  Grado cristalográfico: Amorphous Glass (δ<0.5)
+  Usable: True ✓
+  Problemas: METRIC_MISMATCHES:1, ILL_CONDITIONED_KAPPA
 
-[INPUTS]
-  λ = 5.000000e-01
-  δ = 0.368701
-  MSE = 1.000000e+00
-  Acc = 1.0000
+======================================================================
 
-[RESULTADO]
-  ħ = 2.833308e+00 [sistema]
-  ħ_adimensional = 3.188592e-01
-  Régimen: UNCONSTRAINED
-
-[MÉTODOS]
-  uncertainty    : 1.359401e-01
-  action         : 8.281800e+00
-  conductance    : 1.000000e+00
-  information    : 1.915494e+00
-  Pesos: {'w1': 0.25, 'w2': 0.25, 'w3': 0.25, 'w4': 0.25}
-
-[CONSTANTES DERIVADAS]
-  c_eff = 8.054496e+42 m/s
-  m_P = 5.847406e+26 kg
-  l_P = 6.015783e-70 m
-  t_P = 7.468851e-113 s
-  T_P = 2.747621e+135 K
-
-[VS UNIVERSO REAL]
-  ħ_ratio = 2.686691e+34
-  Δórdenes = +34.4
-  m_P/M_☉ = 2.940656e-04
-
-  → ħ es 34 órdenes MAYOR que física real
-    (Mecánica cuántica macroscópica)
-
-================================================================================
-❯ python3 test.py
-DeepLeaning PLANCK - EPOCH 7196
-
-[INPUTS]
-  λ = 5.000000e-01
-  δ = 0.368701
-  MSE = 1.000000e+00
-  Acc = 1.0000
-
-[RESULTS]
-  ħ = 2.833308e+00 [sistema]
-  ħ_adimensional = 3.188592e-01
-  Régimen: UNCONSTRAINED
-
-[METHODS]
-  uncertainty    : 1.359401e-01
-  action         : 8.281800e+00
-  conductance    : 1.000000e+00
-  information    : 1.915494e+00
-  Pesos: {'w1': 0.25, 'w2': 0.25, 'w3': 0.25, 'w4': 0.25}
-
-[DEREIVATED CONSTANTS]
-  c_eff = 8.054496e+42 m/s
-  m_P = 5.847406e+26 kg
-  l_P = 6.015783e-70 m
-  t_P = 7.468851e-113 s
-  T_P = 2.747621e+135 K
-
-[VS UNIVERSE]
-  ħ_ratio = 2.686691e+34
-  Δórdenes = +34.4
-  m_P/M_☉ = 2.940656e-04
-
-  → ħ is 34 orders more than real fisics
-❯ python3 test.py
-DeepLeaning PLANCK - EPOCH 7196
-
-[INPUTS]
-  λ = 5.000000e-01
-  δ = 0.368701
-  MSE = 1.000000e+00
-  Acc = 1.0000
-
-[RESULTS]
-  ħ = 2.833308e+00 [sistema]
-  ħ_adimensional = 3.188592e-01
-  Régimen: UNCONSTRAINED
-
-[METHODS]
-  uncertainty    : 1.359401e-01
-  action         : 8.281800e+00
-  conductance    : 1.000000e+00
-  information    : 1.915494e+00
-  Pesos: {'w1': 0.25, 'w2': 0.25, 'w3': 0.25, 'w4': 0.25}
-
-[DEREIVATED CONSTANTS]
-  c_eff = 8.054496e+42 m/s
-  m_P = 5.847406e+26 kg
-  l_P = 6.015783e-70 m
-  t_P = 7.468851e-113 s
-  T_P = 2.747621e+135 K
-
-[VS UNIVERSE]
-  ħ_ratio = 2.686691e+34
-  Δórdenes = +34.4
-  m_P/M_☉ = 2.940656e-04
-
-  → ħ is 34 orders more than real fisics
-❯ python3 test.py -o results
-DeepLeaning PLANCK - EPOCH 7196
-
-[INPUTS]
-  λ = 5.000000e-01
-  δ = 0.368701
-  MSE = 1.000000e+00
-  Acc = 1.0000
-
-[RESULTS]
-  ħ = 2.833308e+00 [sistema]
-  ħ_adimensional = 3.188592e-01
-  Régimen: UNCONSTRAINED
-
-[METHODS]
-  uncertainty    : 1.359401e-01
-  action         : 8.281800e+00
-  conductance    : 1.000000e+00
-  information    : 1.915494e+00
-  Pesos: {'w1': 0.25, 'w2': 0.25, 'w3': 0.25, 'w4': 0.25}
-
-[DEREIVATED CONSTANTS]
-  c_eff = 8.054496e+42 m/s
-  m_P = 5.847406e+26 kg
-  l_P = 6.015783e-70 m
-  t_P = 7.468851e-113 s
-  T_P = 2.747621e+135 K
-
-[VS UNIVERSE]
-  ħ_ratio = 2.686691e+34
-  Δórdenes = +34.4
-  m_P/M_☉ = 2.940656e-04
-
-  → ħ is 34 orders more than real fisics
-
-❯ python3 test.py -o results.json
-DeepLeaning PLANCK - EPOCH 7196
-
-[INPUTS]
-  λ = 5.000000e-01
-  δ = 0.368701
-  MSE = 1.000000e+00
-  Acc = 1.0000
-
-[RESULTS]
-  ħ = 2.833308e+00 [sistema]
-  ħ_adimensional = 3.188592e-01
-  Régimen: UNCONSTRAINED
-
-[METHODS]
-  uncertainty    : 1.359401e-01
-  action         : 8.281800e+00
-  conductance    : 1.000000e+00
-  information    : 1.915494e+00
-  Pesos: {'w1': 0.25, 'w2': 0.25, 'w3': 0.25, 'w4': 0.25}
-
-[DEREIVATED CONSTANTS]
-  c_eff = 8.054496e+42 m/s
-  m_P = 5.847406e+26 kg
-  l_P = 6.015783e-70 m
-  t_P = 7.468851e-113 s
-  T_P = 2.747621e+135 K
-
-[VS UNIVERSE]
-  ħ_ratio = 2.686691e+34
-  Δórdenes = +34.4
-  m_P/M_☉ = 2.940656e-04
-
-  → ħ is 34 orders more than real fisics
-Saved in: results.json
-❯ ls
- app.py               CONTRIBUTING.md       experiment2.py                                        install.sh                 __pycache__        results           test.py                     verify.py
- checkpoints          crystal_checkpoints   experiment3.py                                        LICENSE                    README.md          results.json      topological_analysis        weights
- CODE_OF_CONDUCT.md   docs                  experiment.py                                         precision.py               refinamiento.py    SECURITY.md       topological_experiment.py   workflows
- config.toml          expand.py            'Grokkit_ Zero-Shot Spectral Transfer Framework.pdf'   pull_request_template.md   requirements.txt   test_grokkit.py   topological_results
-❯ python verify.py crystal_checkpoints/latest.pth
+Reporte detallado guardado en: checkpoints/latest_verification.json
+❯ python3 verify.py
 
 ======================================================================
 VERIFICANDO CHECKPOINT: crystal_checkpoints/latest.pth
 Epoch reportada: 7196
 ======================================================================
 
-/home/grisun0/src/py/HPU-Core/verify.py:128: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /pytorch/aten/src/ATen/native/ReduceOps.cpp:1857.)
+/home/grisun0/tools/HPU-Core/verify.py:128: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /pytorch/aten/src/ATen/native/ReduceOps.cpp:1857.)
   'std': data.std().item() if data.numel() > 0 else 0,
 
 ======================================================================
@@ -612,7 +427,7 @@ REPORTE DE VERIFICACIÓN
 [MÉTRICAS DE VALIDACIÓN]
   MSE: 0.003906
   Accuracy: 1.0000
-  Max Error: 0.245229
+  Max Error: 0.260287
 
 [MÉTRICAS DE DISCRETIZACIÓN]
   Delta (max): 0.368701
@@ -650,8 +465,42 @@ REPORTE DE VERIFICACIÓN
   Problemas: EXTREME_LAMBDA
 
 ======================================================================
+❯ python3 plank.py
+DeepLeaning PLANCK - EPOCH 7196
 
-Reporte guardado en: crystal_checkpoints/latest_verification.json
+[INPUTS]
+  λ = 5.000000e-01
+  δ = 0.368701
+  MSE = 1.000000e+00
+  Acc = 1.0000
+
+[RESULTS]
+  ħ = 2.833308e+00 [sistema]
+  ħ_adimensional = 3.188592e-01
+  Régimen: UNCONSTRAINED
+
+[METHODS]
+  uncertainty    : 1.359401e-01
+  action         : 8.281800e+00
+  conductance    : 1.000000e+00
+  information    : 1.915494e+00
+  Pesos: {'w1': 0.25, 'w2': 0.25, 'w3': 0.25, 'w4': 0.25}
+
+[DEREIVATED CONSTANTS]
+  c_eff = 8.054496e+42 m/s
+  m_P = 5.847406e+26 kg
+  l_P = 6.015783e-70 m
+  t_P = 7.468851e-113 s
+  T_P = 2.747621e+135 K
+
+[VS UNIVERSE]
+  ħ_ratio = 2.686691e+34
+  Δórdenes = +34.4
+  m_P/M_☉ = 2.940656e-04
+
+  → ħ is 34 orders more than real fisics
+
+
 ```
 
 ---
