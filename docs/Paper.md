@@ -205,6 +205,8 @@ In Strassen, ℏ emerges as a task-level algorithmic thermodynamic constant, inv
 
 A striking aspect of the observation is the extreme sensitivity to initial conditions. Out of approximately 150 tested random seeds, all but one converged to a glassy regime. Only seed 32 accessed the crystalline phase. The sole detectable difference at initialization was a lower initial control parameter, with $\delta \approx 0.46$ for seed 32 versus $\delta \approx 0.49$ for all others. This indicates the presence of a sharp critical threshold in the initial conditions: trajectories starting above it are dynamically unable to cross into the low-action crystalline basin. The phenomenon is therefore not stochastic but governed by a narrow, history-dependent accessibility condition.
 
+We utilize the discretization margin ($\delta$) as an early-stage prospector during seed mining to effectively differentiate between glassy states and Fermi liquids.While most seeds remain trapped in high-delta regimes (characteristic of disordered 'glass'), Seed 32 emerged as a significant outlier. By reaching a minimum $\delta \approx 0.4617$, it bypasses the numerical fragility of the protocol, signaling a potential transition into a Fermi liquid phase that other seeds fail to resolve.
+
 ---
 
 ## References
@@ -326,6 +328,7 @@ Leyenda: ░ = menor δ (mejor candidato)
          Escala: 0.45 = ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
                  0.50 = ████████████████████████████████████████
 ```
+
 
 ---
 
