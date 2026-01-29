@@ -148,7 +148,7 @@ Based on 7196 epochs of training and topological analysis, I propose the followi
 4. **Monitoring**: Track $\delta$ (should stabilize, not converge to 0), Berry phases (should become non-trivial), and $\lambda_{max}$ (should approach 0 from above)
 5. **Verification**: Check topological invariants and validate Hamiltonian correctness
 
-Success rate: Unknown (N=1). The extreme $\lambda$ requirement makes this protocol computationally expensive and numerically fragile.
+The success rate remains undetermined (N=1). Due to the stringent $\lambda$ requirements, this protocol is both computationally intensive and numerically unstable. This assessment is based on initial seed mining, where a marginal delta ($\delta$ = 0.46 from others 0.49) was first identified in seed 32.
 
 ---
 
@@ -202,6 +202,9 @@ The honesty imperative requires stating: this is a single observation, not a val
 What remains valid is the methodology: treat neural networks as physical systems, measure their thermodynamic and topological properties, and report what the machine tells you without embellishment.
 
 In Strassen, ℏ emerges as a task-level algorithmic thermodynamic constant, invariant across training realizations. In contrast, within the HPU framework, ℏ becomes algorithm-dependent, encoding the effective action scale of the learning dynamics itself. This distinction motivates the notion of an algorithmic thermodynamics of learning, where constants are not universal but process-specific.
+
+A striking aspect of the observation is the extreme sensitivity to initial conditions. Out of approximately 150 tested random seeds, all but one converged to a glassy regime. Only seed 32 accessed the crystalline phase. The sole detectable difference at initialization was a lower initial control parameter, with $\delta \approx 0.46$ for seed 32 versus $\delta \approx 0.49$ for all others. This indicates the presence of a sharp critical threshold in the initial conditions: trajectories starting above it are dynamically unable to cross into the low-action crystalline basin. The phenomenon is therefore not stochastic but governed by a narrow, history-dependent accessibility condition.
+
 ---
 
 ## References
