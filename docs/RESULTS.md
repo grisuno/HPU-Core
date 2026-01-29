@@ -1,40 +1,25 @@
 ```text
-
+ python precision.py --checkpoint crystal_checkpoints/crystal_epoch_5309_delta_0.3706_20260128_150931.pth
+2026-01-28 17:27:35,077 - Continuation - INFO - Continuing from: crystal_checkpoints/crystal_epoch_5309_delta_0.3706_20260128_150931.pth
+2026-01-28 17:27:35,087 - Continuation - INFO - Loaded checkpoint - Epoch: 5309, ValAcc: N/A, Delta: 0.37061309814453125
+2026-01-28 17:27:35,709 - Continuation - INFO - Initial lambda: 7.504732e+16
+2026-01-28 17:27:35,738 - Continuation - INFO - Starting epoch: 5309, delta: 0.370613
+2026-01-28 17:27:39,917 - Continuation - INFO - Epoch 5359 | Loss: 2.334646e+13 | MSE: 0.003906 | Quant: 3.1109e-04 | ValAcc: 1.0000 | delta: 0.3705 -> 0.3706 | alpha: 0.99 | Sparsity: 0.00% | Cryst: 99.99% | lambda: 7.504732e+16
+2026-01-28 17:27:44,331 - Continuation - INFO - Epoch 5409 | Loss: 2.328043e+13 | MSE: 0.003906 | Quant: 3.1021e-04 | ValAcc: 1.0000 | delta: 0.3704 -> 0.3706 | alpha: 0.99 | Sparsity: 0.00% | Cryst: 99.99% | lambda: 7.504732e+16
+2026-01-28 17:27:44,447 - Continuation - INFO - No improvement for 101 epochs. Growing lambda...
+2026-01-28 17:27:44,448 - Continuation - INFO - New lambda: 7.504732e+16 -> 7.504732e+17
+2026-01-28 17:27:50,490 - Continuation - INFO - Epoch 5459 | Loss: 2.322068e+14 | MSE: 0.003906 | Quant: 3.0941e-04 | ValAcc: 1.0000 | delta: 0.3703 -> 0.3706 | alpha: 0.99 | Sparsity: 0.00% | Cryst: 99.99% | lambda: 7.504732e+17
+2026-01-28 17:27:56,066 - Continuation - INFO - Epoch 5509 | Loss: 2.316152e+14 | MSE: 0.003906 | Quant: 3.0863e-04 | ValAcc: 1.0000 | delta: 0.3701 -> 0.3706 | alpha: 0.99 | Sparsity: 0.00% | Cryst: 99.99% | lambda: 7.504732e+17
+2026-01-28 17:27:56,293 - Continuation - INFO - No improvement for 101 epochs. Growing lambda...
+...
 2026-01-28 17:31:35,789 - Continuation - INFO - Epoch 7159 | Loss: 2.246780e+31 | MSE: 0.003906 | Quant: 2.9938e-04 | ValAcc: 1.0000 | delta: 0.3687 -> 0.3706 | alpha: 1.00 | Sparsity: 0.01% | Cryst: 100.00% | lambda: 7.504732e+34
 2026-01-28 17:31:35,796 - Continuation - INFO - [DANGER ZONE] Latest checkpoint updated: epoch 7159
 
-luego de eso hice experimento con el checkpoint y menos lambda llegue al mismo resultado
+---
 
-2026-01-28 15:49:55,447 - Continuation - INFO - Sin mejora en 4747 épocas. Aumentando agresividad...
-2026-01-28 15:49:55,448 - Continuation - INFO - Nueva λ: 1259499259.682 → 1889248889.523
-2026-01-28 15:49:55,875 - Continuation - INFO - Época 10059 | Loss: 563813.762500 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 1889248889.523
-2026-01-28 15:50:01,920 - Continuation - INFO - Época 10109 | Loss: 563801.575000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 1889248889.523
-2026-01-28 15:50:07,823 - Continuation - INFO - Sin mejora en 4848 épocas. Aumentando agresividad...
-2026-01-28 15:50:07,824 - Continuation - INFO - Nueva λ: 1889248889.523 → 2833873334.285
-2026-01-28 15:50:08,065 - Continuation - INFO - Época 10159 | Loss: 845684.112500 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 2833873334.285
-2026-01-28 15:50:14,194 - Continuation - INFO - Época 10209 | Loss: 845666.525000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 2833873334.285
-2026-01-28 15:50:20,084 - Continuation - INFO - Sin mejora en 4949 épocas. Aumentando agresividad...
-2026-01-28 15:50:20,085 - Continuation - INFO - Nueva λ: 2833873334.285 → 4250810001.427
-2026-01-28 15:50:20,214 - Continuation - INFO - Época 10259 | Loss: 1268473.425000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 4250810001.427
-2026-01-28 15:50:26,468 - Continuation - INFO - Época 10309 | Loss: 1268457.800000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 4250810001.427
-2026-01-28 15:50:33,324 - Continuation - INFO - Época 10359 | Loss: 1268442.050000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 4250810001.427
-2026-01-28 15:50:33,324 - Continuation - INFO - Sin mejora en 5050 épocas. Aumentando agresividad...
-2026-01-28 15:50:33,325 - Continuation - INFO - Nueva λ: 4250810001.427 → 6376215002.140
-2026-01-28 15:50:39,919 - Continuation - INFO - Época 10409 | Loss: 1902640.900000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 6376215002.140
-2026-01-28 15:50:46,331 - Continuation - INFO - Época 10459 | Loss: 1902618.900000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 6376215002.140
-2026-01-28 15:50:46,454 - Continuation - INFO - Sin mejora en 5151 épocas. Aumentando agresividad...
-2026-01-28 15:50:46,454 - Continuation - INFO - Nueva λ: 6376215002.140 → 9564322503.211
-2026-01-28 15:50:53,054 - Continuation - INFO - Época 10509 | Loss: 2853899.100000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 9564322503.211
-2026-01-28 15:50:59,814 - Continuation - INFO - Época 10559 | Loss: 2853870.200000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 9564322503.211
-2026-01-28 15:51:00,075 - Continuation - INFO - Sin mejora en 5252 épocas. Aumentando agresividad...
-2026-01-28 15:51:00,076 - Continuation - INFO - Nueva λ: 9564322503.211 → 14346483754.816
-2026-01-28 15:51:05,816 - Continuation - INFO - Época 10609 | Loss: 4280764.100000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 14346483754.816
-2026-01-28 15:51:11,870 - Continuation - INFO - Época 10659 | Loss: 4280723.400000 | MSE: 0.003906 | Quant: 0.0003 | ValAcc: 1.0000 | δ: 0.3686 → 0.3706 | α: 1.00 | Sparsity: 0.00% | Cryst: 100.00% | λ: 14346483754.816
-2026-01-28 15:51:12,250 - Continuation - INFO - Sin mejora en 5353 épocas. Aumentando agresividad...
+---
 
-
-
-❯ python3 test.py -o results.json
+❯ python3 plank.py -o results.json
 DeepLeaning PLANCK - EPOCH 7196
 
 [INPUTS]
