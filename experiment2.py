@@ -66,7 +66,10 @@ class Config:
     CYCLIC_LR_STEP_SIZE: int = 50
     COSINE_ANNEALING_ETA_MIN_FACTOR: float = 0.01
     MSE_THRESHOLD: float = 0.05
-
+    KAPPA_MAX_DIM: int = 10000
+    EIGENVALUE_TOL: float = 1e-10
+    KAPPA_MAX_ITER: int = 100
+    KAPPA_TOL: float = 1e-6
 
 class SeedManager:
     @staticmethod
@@ -354,6 +357,76 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
         return -np.log(delta + 1e-15)
     
     @staticmethod
+    def compute_kappa(model: HamiltonianNeuralNetwork, val_x: torch.Tensor, 
+                     val_y: torch.Tensor, num_batches: int = 5) -> float:
+        """
+        Número de condición de la matriz de covarianza de gradientes.
+        """
+        model.eval()
+        grads = []
+        
+        for i in range(num_batches):
+            try:
+                model.zero_grad()
+                
+                # Perturbación controlada en input para variedad
+                noise_scale = 0.01 * (i + 1) / num_batches
+                val_x_perturbed = val_x + torch.randn_like(val_x) * noise_scale
+                
+                outputs = model(val_x_perturbed)
+                loss = F.mse_loss(outputs, val_y)
+                loss.backward()
+                
+                # Recolectar gradientes de todos los parámetros
+                grad_list = []
+                for p in model.parameters():
+                    if p.grad is not None and p.grad.numel() > 0:
+                        grad_list.append(p.grad.flatten())
+                
+                if grad_list:
+                    grad_vector = torch.cat(grad_list)
+                    if torch.isfinite(grad_vector).all():
+                        grads.append(grad_vector.detach())
+                        
+            except Exception as e:
+                logger.warning(f"Gradient computation failed batch {i}: {e}")
+                continue
+        
+        if len(grads) < 2:
+            return float('inf')
+        
+        grads_tensor = torch.stack(grads)
+        n_samples, n_dims = grads_tensor.shape
+        
+        # Reducir dimensionalidad si es necesario
+        if n_dims > Config.KAPPA_MAX_DIM:
+            indices = torch.randperm(n_dims, device=grads_tensor.device)[:Config.KAPPA_MAX_DIM]
+            grads_tensor = grads_tensor[:, indices]
+            n_dims = Config.KAPPA_MAX_DIM
+        
+        try:
+            # Computar eigenvalores de forma eficiente
+            if n_samples < n_dims:
+                # Matriz gramiana: G G^T tiene mismos eigenvalores no nulos que G^T G
+                gram = torch.mm(grads_tensor, grads_tensor.t()) / max(n_samples - 1, 1)
+                eigenvals = torch.linalg.eigvalsh(gram)
+            else:
+                cov = torch.cov(grads_tensor.t())
+                eigenvals = torch.linalg.eigvalsh(cov).real
+            
+            # Filtrar valores numéricamente positivos
+            eigenvals = eigenvals[eigenvals > Config.EIGENVALUE_TOL]
+            
+            if len(eigenvals) == 0:
+                return float('inf')
+            
+            return (eigenvals.max() / eigenvals.min()).item()
+            
+        except Exception as e:
+            logger.warning(f"Eigenvalue computation failed: {e}")
+            return float('inf')
+
+    @staticmethod
     def compute_kappa_quantum(coeffs: Dict[str, torch.Tensor], hbar: float = Config.HBAR) -> float:
         flat_params = torch.cat([c.flatten()[:1000] for c in coeffs.values()])
         n = flat_params.numel()
@@ -369,40 +442,232 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             return (eigenvals.max() / eigenvals.min()).item() if len(eigenvals) > 0 else 1.0
         except Exception:
             return 1.0
-    
-    @staticmethod
-    def compute_poynting_vector(coeffs: Dict[str, torch.Tensor]) -> Dict[str, Any]:
-        E = torch.cat([c.flatten()[:1000] for c in coeffs.values()])
-        H_magnitude = torch.norm(torch.matmul(E.unsqueeze(1)[:50, :50], E.unsqueeze(0)[:50, :50]) - torch.eye(min(50, E.size(0)), device=E.device))
-        poynting_magnitude = torch.norm(E) * H_magnitude * Config.ENERGY_FLOW_SCALE
-        energy_distribution = {
-            'magnitude': torch.norm(E).item()
-        }
+
+    def _compute_crystallography_metrics(self) -> Dict[str, Any]:
+        """
+        Métricas cristalográficas con aislamiento completo de errores.
+        """
+        try:
+            return CrystallographyMetrics.compute_all_metrics(
+                self.model, self.val_x, self.val_y
+            )
+        except Exception as e:
+            logger.error(f"Critical error in crystallography metrics: {e}")
+            import traceback
+            traceback.print_exc()
+            
+            # Fallback completo
+            return {
+                'kappa': float('inf'),
+                'delta': 1.0,
+                'alpha': 0.0,
+                'kappa_q': 1.0,
+                'lc': 0.0,
+                'poynting': {
+                    'poynting_magnitude': 0.0,
+                    'is_radiating': False,
+                    'energy_distribution': {}
+                },
+                'purity_index': 0.0,
+                'is_crystal': False,
+                'energy_flow': 0.0
+            }
+
+    def _check_weight_integrity(self) -> Dict[str, Any]:
+        """
+        Verifica integridad de pesos: NaN, Inf, y estadísticas básicas.
+        """
+        has_nan = False
+        has_inf = False
+        total_params = 0
+        nan_params = 0
+        inf_params = 0
+        param_stats = {}
+        
+        for name, param in self.model.named_parameters():
+            data = param.data
+            numel = data.numel()
+            total_params += numel
+            
+            # Contar anomalías
+            n_nan = torch.isnan(data).sum().item()
+            n_inf = torch.isinf(data).sum().item()
+            
+            if n_nan > 0:
+                has_nan = True
+                nan_params += n_nan
+            if n_inf > 0:
+                has_inf = True
+                inf_params += n_inf
+            
+            # Estadísticas seguras según tamaño del tensor
+            if numel == 0:
+                mean_val = std_val = min_val = max_val = 0.0
+            elif numel == 1:
+                val = data.item()
+                mean_val = min_val = max_val = val
+                std_val = 0.0
+            else:
+                mean_val = data.mean().item()
+                std_val = data.std().item()
+                min_val = data.min().item()
+                max_val = data.max().item()
+            
+            param_stats[name] = {
+                'shape': list(data.shape),
+                'mean': mean_val,
+                'std': std_val,
+                'min': min_val,
+                'max': max_val,
+                'has_nan': n_nan > 0,
+                'has_inf': n_inf > 0
+            }
+        
+        corruption_ratio = (nan_params + inf_params) / total_params if total_params > 0 else 0.0
+        
         return {
-            'poynting_magnitude': poynting_magnitude.item(),
-            'energy_distribution': energy_distribution,
-            'is_radiating': poynting_magnitude.item() > Config.POYNTING_THRESHOLD,
-            'field_orthogonality': H_magnitude.item()
+            'is_valid': not (has_nan or has_inf),
+            'has_nan': has_nan,
+            'has_inf': has_inf,
+            'total_params': total_params,
+            'nan_params': nan_params,
+            'inf_params': inf_params,
+            'corruption_ratio': corruption_ratio,
+            'layer_stats': param_stats
         }
-    
+
     @staticmethod
-    def compute_all_metrics(model: nn.Module, dataloader: DataLoader, num_batches: int = 1) -> Dict[str, Any]:
-        coeffs = {}
-        for name, param in model.named_parameters():
-            coeffs[name] = param.data.clone()
+    def compute_poynting_vector(model: HamiltonianNeuralNetwork) -> Dict[str, Any]:
+        """
+        Vector de Poynting: flujo de energía en el espacio de parámetros.
+        Análogo electromagnético para redes neuronales.
+        """
+        # Campo "eléctrico": concatenar todos los parámetros del modelo
+        all_params = []
+        for param in model.parameters():
+            if param is not None and param.numel() > 0:
+                all_params.append(param.flatten())
+        
+        if not all_params:
+            return {
+                'poynting_magnitude': 0.0,
+                'energy_distribution': {},
+                'is_radiating': False,
+                'field_orthogonality': 0.0
+            }
+        
+        E = torch.cat(all_params)
+        
+        # Campo "magnético": no localidad entre capas espectrales
+        # Extraer normas inspeccionando state_dict, NO accediendo a atributos del módulo
+        state_dict = model.state_dict()
+        spectral_norms = []
+        
+        # Encontrar índices de capas espectrales
+        spectral_indices = set()
+        for key in state_dict.keys():
+            if key.startswith('spectral_layers.'):
+                parts = key.split('.')
+                if len(parts) >= 2:
+                    try:
+                        idx = int(parts[1])
+                        spectral_indices.add(idx)
+                    except ValueError:
+                        continue
+        
+        # Calcular norma por capa espectral
+        for idx in sorted(spectral_indices):
+            layer_param_keys = [k for k in state_dict.keys() if k.startswith(f'spectral_layers.{idx}.')]
+            if layer_param_keys:
+                layer_params = [state_dict[k] for k in layer_param_keys]
+                concatenated = torch.cat([p.flatten() for p in layer_params])
+                layer_norm = torch.norm(concatenated)
+                spectral_norms.append(layer_norm)
+        
+        # Campo magnético como suma de diferencias entre capas consecutivas
+        if len(spectral_norms) > 1:
+            differences = []
+            for i in range(len(spectral_norms) - 1):
+                diff = torch.abs(spectral_norms[i] - spectral_norms[i + 1])
+                differences.append(diff)
+            H_magnitude = torch.stack(differences).sum()
+        else:
+            H_magnitude = torch.tensor(0.0, device=E.device)
+        
+        # Poynting ~ |E| * |H| * scale
+        poynting_magnitude = torch.norm(E) * H_magnitude * ThermodynamicConfig.ENERGY_FLOW_SCALE
+        
+        # Distribución de energía por componente
+        energy_distribution = {
+            'input_proj': float(torch.norm(state_dict.get('input_proj.weight', torch.tensor(0.0))).item()),
+            'output_proj': float(torch.norm(state_dict.get('output_proj.weight', torch.tensor(0.0))).item()),
+            'spectral_total': float(torch.stack(spectral_norms).sum().item()) if spectral_norms else 0.0,
+            'n_spectral_layers': len(spectral_norms)
+        }
+        
+        return {
+            'poynting_magnitude': float(poynting_magnitude.item()),
+            'energy_distribution': energy_distribution,
+            'is_radiating': float(poynting_magnitude.item()) > ThermodynamicConfig.POYNTING_THRESHOLD,
+            'field_orthogonality': float(H_magnitude.item())
+        }
+        
+    @staticmethod
+    def compute_all_metrics(model: HamiltonianNeuralNetwork, 
+                           val_x: torch.Tensor, 
+                           val_y: torch.Tensor) -> Dict[str, Any]:
+        """
+        Calcula todas las métricas cristalográficas con manejo de errores.
+        """
+        # Métricas básicas siempre computables
+        try:
+            delta = CrystallographyMetrics.compute_discretization_margin(model)
+            alpha = CrystallographyMetrics.compute_alpha_purity(model)
+        except Exception as e:
+            logger.error(f"Basic crystallography failed: {e}")
+            delta, alpha = 1.0, 0.0
+        
+        # Helper para computación defensiva
+        def safe_compute(func, *args, default=None, **kwargs):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                logger.debug(f"{func.__name__} failed: {e}")
+                return default
+        
+        # Computar métricas opcionales
+        kappa = safe_compute(CrystallographyMetrics.compute_kappa, model, val_x, val_y, 
+                           default=float('inf'))
+        kappa_q = safe_compute(CrystallographyMetrics.compute_kappa_quantum, model, 
+                              default=1.0)
+        lc = safe_compute(CrystallographyMetrics.compute_local_complexity, model, 
+                         default=0.0)
+        poynting = safe_compute(CrystallographyMetrics.compute_poynting_vector, model, 
+                               default={
+                                   'poynting_magnitude': 0.0,
+                                   'is_radiating': False,
+                                   'energy_distribution': {}
+                               })
         
         metrics = {
-            'kappa': CrystallographyMetricsCalculator.compute_gradient_covariance_kappa(model, dataloader, num_batches),
-            'delta': CrystallographyMetricsCalculator.compute_discretization_margin(coeffs),
-            'alpha': CrystallographyMetricsCalculator.compute_alpha_purity(coeffs),
-            'kappa_q': CrystallographyMetricsCalculator.compute_kappa_quantum(coeffs),
-            'poynting': CrystallographyMetricsCalculator.compute_poynting_vector(coeffs)
+            'kappa': kappa,
+            'delta': delta,
+            'alpha': alpha,
+            'kappa_q': kappa_q,
+            'lc': lc,
+            'poynting': poynting
         }
-        metrics['purity_index'] = 1.0 - metrics['delta']
-        metrics['is_crystal'] = metrics['alpha'] > 7.0
-        metrics['energy_flow'] = metrics['poynting']['poynting_magnitude']
+        
+        # Métricas derivadas
+        metrics['purity_index'] = 1.0 - delta
+        metrics['is_crystal'] = alpha > ThermodynamicConfig.CRYSTAL_ALPHA_THRESHOLD
+        
+        if isinstance(poynting, dict):
+            metrics['energy_flow'] = poynting.get('poynting_magnitude', 0.0)
+        else:
+            metrics['energy_flow'] = 0.0
+        
         return metrics
-
 
 class ThermodynamicMetricsCalculator(IMetricsCalculator):
     def compute(self, model: nn.Module, gradient_buffer: deque, learning_rate: float, loss_history: deque, temp_history: deque) -> Dict[str, float]:
