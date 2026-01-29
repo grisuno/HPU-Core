@@ -17,8 +17,6 @@
 
 ---
 
----
-
 ❯ python3 plank.py -o results.json
 DeepLeaning PLANCK - EPOCH 7196
 
@@ -54,6 +52,9 @@ DeepLeaning PLANCK - EPOCH 7196
 
   → ħ is 34 orders more than real fisics
 Saved in: results.json
+
+---
+
 ❯ python verify.py crystal_checkpoints/latest.pth
 
 ======================================================================
