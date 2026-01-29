@@ -240,6 +240,36 @@ This work was conducted as a continuation of the Strassen crystallization resear
 
 ---
 
+## Appendix C: Reproducibility
+
+Repository: https://github.com/grisuno/HPU-Core
+
+DOI: https://doi.org/10.5281/zenodo.18072858
+DOI: https://doi.org/10.5281/zenodo.18407920
+
+Reproduction:
+
+```bash
+git clone https://github.com/grisuno/HPU-Core
+cd HPU-Core
+pip install -r requirements.txt
+python app.py
+```
+
+Related repositories:
+
+- Ancestor: https://github.com/grisuno/SWAN-Phoenix-Rising
+- Core Framework: https://github.com/grisuno/agi
+- Parity Cassette: https://github.com/grisuno/algebra-de-grok
+- Wave Cassette: https://github.com/grisuno/1d_wave_equation_grokker
+- Kepler Cassette: https://github.com/grisuno/kepler_orbit_grokker
+- Pendulum Cassette: https://github.com/grisuno/chaotic_pendulum_grokked
+- Ciclotron Cassette: https://github.com/grisuno/supertopo3
+- MatMul 2x2 Cassette: https://github.com/grisuno/matrixgrokker
+- Strassen Cassette: https://github.com/grisuno/strass_strassen
+
+---
+
 *grisun0*
 *January 28, 2026*
 
