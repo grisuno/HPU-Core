@@ -253,8 +253,8 @@ This work was conducted as a continuation of the Strassen crystallization resear
 
 Repository: https://github.com/grisuno/HPU-Core
 
-DOI: https://doi.org/10.5281/zenodo.18072858
-DOI: https://doi.org/10.5281/zenodo.18407920
+- DOI: https://doi.org/10.5281/zenodo.18072858
+- DOI: https://doi.org/10.5281/zenodo.18407920
 
 Reproduction:
 
