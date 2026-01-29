@@ -8,7 +8,7 @@ Date of creation: 2026
 License: AGPL v3
 
 Description:  
-Hamiltonian Grokking - Mining Strassen Crystals
+Hamiltonian Grokking - Mining HPU Crystals
 Sequential seed mining for deterministic reproducibility
 """
 
