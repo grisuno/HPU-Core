@@ -253,8 +253,8 @@ This work was conducted as a continuation of the Strassen crystallization resear
 
 Repository: https://github.com/grisuno/HPU-Core
 
-- DOI: https://doi.org/10.5281/zenodo.18072858
-- DOI: https://doi.org/10.5281/zenodo.18407920
+DOI: https://doi.org/10.5281/zenodo.18072858
+DOI: https://doi.org/10.5281/zenodo.18407920
 
 Reproduction:
 
@@ -267,7 +267,8 @@ python app.py
 
 Related repositories:
 
-- Ancestor: https://github.com/grisuno/SWAN-Phoenix-Rising
+- First Ancestor: https://github.com/grisuno/TopoBrain
+- Seccond Ancestor: https://github.com/grisuno/SWAN-Phoenix-Rising
 - Core Framework: https://github.com/grisuno/agi
 - Parity Cassette: https://github.com/grisuno/algebra-de-grok
 - Wave Cassette: https://github.com/grisuno/1d_wave_equation_grokker
