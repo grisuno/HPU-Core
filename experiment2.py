@@ -300,8 +300,12 @@ class SuperpositionAnalyzer:
 
 
 class CrystallographyMetricsCalculator(IMetricsCalculator):
-    def compute(self, model: nn.Module, dataloader: DataLoader, num_batches: int = 1) -> Dict[str, Any]:
-        return self.compute_all_metrics(model, dataloader, num_batches)
+    def compute(self, model: nn.Module, val_x: torch.Tensor, val_y: torch.Tensor) -> Dict[str, Any]:
+        """
+        Implementación de interfaz IMetricsCalculator.
+        Delega a compute_all_metrics con los argumentos correctos.
+        """
+        return self.compute_all_metrics(model, val_x, val_y)
     
     @staticmethod
     def compute_gradient_covariance_kappa(model: nn.Module, dataloader: DataLoader, num_batches: int = 1) -> float:
@@ -319,7 +323,7 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             loss = nn.MSELoss()(outputs, batch_y)
             try:
                 grad = torch.autograd.grad(loss, model.parameters(), create_graph=False)
-                grad_norms.append(torch.cat([g.flatten()[:500] for g in grad if g.nelement() > 0]))
+                grad_norms.append(torch.cat([g.flatten()[:Config.KAPPA_MAX_DIM] for g in grad if g.nelement() > 0]))
             except Exception:
                 continue
         
@@ -327,13 +331,13 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             return 1.0
         
         try:
-            grads_tensor = torch.stack([g[:500] for g in grad_norms])
+            grads_tensor = torch.stack([g[:Config.KAPPA_MAX_DIM] for g in grad_norms])
             if grads_tensor.size(0) < 2 or grads_tensor.size(1) < 2:
                 return 1.0
             
             cov_matrix = torch.cov(grads_tensor.T)
             eigenvalues = torch.linalg.eigvals(cov_matrix).real
-            eigenvalues = eigenvalues[eigenvalues > 1e-10]
+            eigenvalues = eigenvalues[eigenvalues > Config.EIGENVALUE_TOL]
             if len(eigenvalues) < 2:
                 return 1.0
             return (eigenvalues.max() / eigenvalues.min()).item()
@@ -341,7 +345,23 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             return 1.0
     
     @staticmethod
+    def compute_discretization_margin_from_state_dict(model: nn.Module) -> float:
+        """
+        Calcula el margen de discretización desde los parámetros del modelo.
+        Versión estática que no requiere diccionario externo.
+        """
+        margins = []
+        for param in model.parameters():
+            if param.numel() > 0:
+                margin = (param.data - param.data.round()).abs().max().item()
+                margins.append(margin)
+        return max(margins) if margins else 0.0
+    
+    @staticmethod
     def compute_discretization_margin(coeffs: Dict[str, torch.Tensor]) -> float:
+        """
+        Calcula el margen de discretización desde un diccionario de coeficientes.
+        """
         margins = []
         for tensor in coeffs.values():
             if tensor.numel() > 0:
@@ -350,11 +370,24 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
         return max(margins) if margins else 0.0
     
     @staticmethod
-    def compute_alpha_purity(coeffs: Dict[str, torch.Tensor]) -> float:
-        delta = CrystallographyMetricsCalculator.compute_discretization_margin(coeffs)
-        if delta < 1e-10:
+    def compute_alpha_purity_from_model(model: nn.Module) -> float:
+        """
+        Calcula el índice de pureza alpha directamente desde el modelo.
+        """
+        delta = CrystallographyMetricsCalculator.compute_discretization_margin_from_state_dict(model)
+        if delta < Config.MIN_VARIANCE_THRESHOLD:
             return 20.0
-        return -np.log(delta + 1e-15)
+        return -np.log(delta + Config.ENTROPY_EPS)
+    
+    @staticmethod
+    def compute_alpha_purity(coeffs: Dict[str, torch.Tensor]) -> float:
+        """
+        Calcula el índice de pureza alpha desde un diccionario de coeficientes.
+        """
+        delta = CrystallographyMetricsCalculator.compute_discretization_margin(coeffs)
+        if delta < Config.MIN_VARIANCE_THRESHOLD:
+            return 20.0
+        return -np.log(delta + Config.ENTROPY_EPS)
     
     @staticmethod
     def compute_kappa(model: HamiltonianNeuralNetwork, val_x: torch.Tensor, 
@@ -364,13 +397,14 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
         """
         model.eval()
         grads = []
-        
+
+        logger = LoggerFactory.create_logger("CrystallographyMetrics")
         for i in range(num_batches):
             try:
                 model.zero_grad()
                 
                 # Perturbación controlada en input para variedad
-                noise_scale = 0.01 * (i + 1) / num_batches
+                noise_scale = Config.NOISE_AMPLITUDE * (i + 1) / num_batches
                 val_x_perturbed = val_x + torch.randn_like(val_x) * noise_scale
                 
                 outputs = model(val_x_perturbed)
@@ -427,8 +461,39 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             return float('inf')
 
     @staticmethod
-    def compute_kappa_quantum(coeffs: Dict[str, torch.Tensor], hbar: float = Config.HBAR) -> float:
-        flat_params = torch.cat([c.flatten()[:1000] for c in coeffs.values()])
+    def compute_kappa_quantum(model: nn.Module, hbar: float = Config.HBAR) -> float:
+        """
+        Versión del cálculo cuántico de kappa que opera directamente sobre el modelo.
+        """
+        flat_params = []
+        for param in model.parameters():
+            if param.numel() > 0:
+                flat_params.append(param.data.flatten())
+        
+        if not flat_params:
+            return 1.0
+            
+        W = torch.cat(flat_params)[:Config.KAPPA_MAX_DIM]
+        n = W.numel()
+        if n < 2:
+            return 1.0
+        
+        params_centered = W - W.mean()
+        cov_matrix = torch.outer(params_centered, params_centered) / n
+        cov_matrix = cov_matrix + hbar * torch.eye(n, device=W.device)
+        try:
+            eigenvals = torch.linalg.eigvalsh(cov_matrix)
+            eigenvals = eigenvals[eigenvals > hbar]
+            return (eigenvals.max() / eigenvals.min()).item() if len(eigenvals) > 0 else 1.0
+        except Exception:
+            return 1.0
+    
+    @staticmethod
+    def compute_kappa_quantum_from_coeffs(coeffs: Dict[str, torch.Tensor], hbar: float = Config.HBAR) -> float:
+        """
+        Versión del cálculo cuántico de kappa desde diccionario de coeficientes.
+        """
+        flat_params = torch.cat([c.flatten()[:Config.KAPPA_MAX_DIM] for c in coeffs.values()])
         n = flat_params.numel()
         if n < 2:
             return 1.0
@@ -443,14 +508,12 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
         except Exception:
             return 1.0
 
-    def _compute_crystallography_metrics(self) -> Dict[str, Any]:
+    def _compute_crystallography_metrics(self, model: nn.Module, val_x: torch.Tensor, val_y: torch.Tensor) -> Dict[str, Any]:
         """
         Métricas cristalográficas con aislamiento completo de errores.
         """
         try:
-            return CrystallographyMetrics.compute_all_metrics(
-                self.model, self.val_x, self.val_y
-            )
+            return self.compute_all_metrics(model, val_x, val_y)
         except Exception as e:
             logger.error(f"Critical error in crystallography metrics: {e}")
             import traceback
@@ -473,7 +536,7 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
                 'energy_flow': 0.0
             }
 
-    def _check_weight_integrity(self) -> Dict[str, Any]:
+    def _check_weight_integrity(self, model: nn.Module) -> Dict[str, Any]:
         """
         Verifica integridad de pesos: NaN, Inf, y estadísticas básicas.
         """
@@ -484,7 +547,7 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
         inf_params = 0
         param_stats = {}
         
-        for name, param in self.model.named_parameters():
+        for name, param in model.named_parameters():
             data = param.data
             numel = data.numel()
             total_params += numel
@@ -595,12 +658,12 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             H_magnitude = torch.tensor(0.0, device=E.device)
         
         # Poynting ~ |E| * |H| * scale
-        poynting_magnitude = torch.norm(E) * H_magnitude * ThermodynamicConfig.ENERGY_FLOW_SCALE
+        poynting_magnitude = torch.norm(E) * H_magnitude * Config.ENERGY_FLOW_SCALE
         
         # Distribución de energía por componente
         energy_distribution = {
-            'input_proj': float(torch.norm(state_dict.get('input_proj.weight', torch.tensor(0.0))).item()),
-            'output_proj': float(torch.norm(state_dict.get('output_proj.weight', torch.tensor(0.0))).item()),
+            'input_proj': float(torch.norm(state_dict.get('input_proj.weight', torch.tensor(0.0, device=E.device))).item()),
+            'output_proj': float(torch.norm(state_dict.get('output_proj.weight', torch.tensor(0.0, device=E.device))).item()),
             'spectral_total': float(torch.stack(spectral_norms).sum().item()) if spectral_norms else 0.0,
             'n_spectral_layers': len(spectral_norms)
         }
@@ -608,7 +671,7 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
         return {
             'poynting_magnitude': float(poynting_magnitude.item()),
             'energy_distribution': energy_distribution,
-            'is_radiating': float(poynting_magnitude.item()) > ThermodynamicConfig.POYNTING_THRESHOLD,
+            'is_radiating': float(poynting_magnitude.item()) > Config.POYNTING_THRESHOLD,
             'field_orthogonality': float(H_magnitude.item())
         }
         
@@ -621,14 +684,15 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
         """
         # Métricas básicas siempre computables
         try:
-            delta = CrystallographyMetrics.compute_discretization_margin(model)
-            alpha = CrystallographyMetrics.compute_alpha_purity(model)
+            delta = CrystallographyMetricsCalculator.compute_discretization_margin_from_state_dict(model)
+            alpha = CrystallographyMetricsCalculator.compute_alpha_purity_from_model(model)
         except Exception as e:
             logger.error(f"Basic crystallography failed: {e}")
             delta, alpha = 1.0, 0.0
         
         # Helper para computación defensiva
         def safe_compute(func, *args, default=None, **kwargs):
+            logger = LoggerFactory.create_logger("CrystallographyMetrics")
             try:
                 return func(*args, **kwargs)
             except Exception as e:
@@ -636,13 +700,13 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
                 return default
         
         # Computar métricas opcionales
-        kappa = safe_compute(CrystallographyMetrics.compute_kappa, model, val_x, val_y, 
+        kappa = safe_compute(CrystallographyMetricsCalculator.compute_kappa, model, val_x, val_y, 
                            default=float('inf'))
-        kappa_q = safe_compute(CrystallographyMetrics.compute_kappa_quantum, model, 
+        kappa_q = safe_compute(CrystallographyMetricsCalculator.compute_kappa_quantum, model, 
                               default=1.0)
-        lc = safe_compute(CrystallographyMetrics.compute_local_complexity, model, 
-                         default=0.0)
-        poynting = safe_compute(CrystallographyMetrics.compute_poynting_vector, model, 
+        lc = safe_compute(LocalComplexityAnalyzer.compute_local_complexity, None, 
+                         default=0.0)  # Placeholder - LC se computa separadamente en execute_training
+        poynting = safe_compute(CrystallographyMetricsCalculator.compute_poynting_vector, model, 
                                default={
                                    'poynting_magnitude': 0.0,
                                    'is_radiating': False,
@@ -654,13 +718,13 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             'delta': delta,
             'alpha': alpha,
             'kappa_q': kappa_q,
-            'lc': lc,
+            'lc': 0.0,  # Se actualiza desde execute_training
             'poynting': poynting
         }
         
         # Métricas derivadas
         metrics['purity_index'] = 1.0 - delta
-        metrics['is_crystal'] = alpha > ThermodynamicConfig.CRYSTAL_ALPHA_THRESHOLD
+        metrics['is_crystal'] = alpha > Config.DISCRETIZATION_MARGIN
         
         if isinstance(poynting, dict):
             metrics['energy_flow'] = poynting.get('poynting_magnitude', 0.0)
@@ -668,6 +732,7 @@ class CrystallographyMetricsCalculator(IMetricsCalculator):
             metrics['energy_flow'] = 0.0
         
         return metrics
+
 
 class ThermodynamicMetricsCalculator(IMetricsCalculator):
     def compute(self, model: nn.Module, gradient_buffer: deque, learning_rate: float, loss_history: deque, temp_history: deque) -> Dict[str, float]:
@@ -977,7 +1042,8 @@ class TrainingEngine:
         sp_values = []
         for name, param in self.model.named_parameters():
             if 'weight' in name and param.dim() >= 2:
-                w = param[:min(param.size(0), 256), :min(param.size(1), 256)]
+                # Limitar tamaño para eficiencia computacional
+                w = param[:min(param.size(0), Config.GRID_SIZE), :min(param.size(1), Config.GRID_SIZE)]
                 lc = self.lc_analyzer.compute_local_complexity(w)
                 sp = self.sp_analyzer.compute_superposition(w)
                 lc_values.append(lc)
@@ -998,7 +1064,8 @@ class TrainingEngine:
             
             lc, sp = self.compute_weight_metrics()
             
-            crystal_metrics = self.crystal_calculator.compute_all_metrics(self.model, dataloader)
+            # CORRECCIÓN: Pasar val_x y val_y en lugar de dataloader
+            crystal_metrics = self.crystal_calculator.compute_all_metrics(self.model, val_x, val_y)
             alpha = crystal_metrics.get('alpha', 0.0)
             kappa = crystal_metrics.get('kappa', 1.0)
             delta = crystal_metrics.get('delta', 1.0)
@@ -1042,7 +1109,6 @@ class TrainingEngine:
         elapsed = time.time() - start_time
         self.logger.info(f"Training completed in {elapsed:.1f} seconds")
         return True
-
 
 class SeedMiningSystem:
     def __init__(self, max_attempts: int = Config.MINING_MAX_ATTEMPTS):
@@ -1176,17 +1242,16 @@ class CheckpointAnalyzer:
         else:
             model.load_state_dict(checkpoint)
         
-        dummy_dataset = HamiltonianDataset(num_samples=10)
+        # Crear datos dummy para análisis
+        dummy_dataset = HamiltonianDataset(num_samples=Config.NUM_SAMPLES)
+        val_x, val_y = dummy_dataset.get_validation_batch()
+        val_x = val_x.to(Config.DEVICE)
+        val_y = val_y.to(Config.DEVICE)
         
-        class DummyLoader:
-            def __init__(self, dataset):
-                self.dataset = dataset
-            def __iter__(self):
-                for i in range(min(1, len(self.dataset))):
-                    yield self.dataset[i]
+        # CORRECCIÓN: Usar val_x y val_y en lugar de dataloader dummy
+        crystal_calculator = CrystallographyMetricsCalculator()
+        crystal_metrics = crystal_calculator.compute_all_metrics(model, val_x, val_y)
         
-        dataloader = DummyLoader(dummy_dataset)
-        crystal_metrics = CrystallographyMetricsCalculator.compute_all_metrics(model, dataloader)
         spectroscopy_metrics = SpectroscopyMetricsCalculator.compute_weight_diffraction(
             {name: param.data for name, param in model.named_parameters()}
         )
@@ -1204,6 +1269,7 @@ class CheckpointAnalyzer:
         
         self.logger.info(f"Analysis completed. Results saved to: {results_path}")
         return results
+
 
 
 class Application:
