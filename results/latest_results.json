@@ -1,0 +1,515 @@
+{
+  "metadata": {
+    "checkpoint_path": "crystal_checkpoints/latest.pth",
+    "epoch": 7196,
+    "timestamp": "2026-01-31T01:35:23.368661",
+    "analysis_version": "1.0.0"
+  },
+  "state_space": {
+    "A_shape": [
+      32,
+      32
+    ],
+    "B_shape": [
+      32,
+      1
+    ],
+    "C_shape": [
+      1,
+      32
+    ],
+    "D_shape": [
+      1,
+      1
+    ],
+    "num_states": 32
+  },
+  "transfer_function": {
+    "numerator": [
+      1.0,
+      -3.0562835065786247e-28,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "denominator": [
+      1.0,
+      -3.0562835065786247e-28,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "order": 32
+  },
+  "poles_zeros": {
+    "poles": [
+      "(3.0562835065786247e-28+0j)",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j"
+    ],
+    "zeros": [
+      "(3.0562835065786247e-28+0j)",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j"
+    ],
+    "num_poles": 32,
+    "num_zeros": 32
+  },
+  "stability": {
+    "is_stable": false,
+    "stability_type": "marginally_stable",
+    "dominant_pole": "(3.0562835065786247e-28+0j)",
+    "stability_margin": -3.0562835065786247e-28,
+    "unstable_poles": [
+      "(3.0562835065786247e-28+0j)",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j"
+    ],
+    "num_unstable": 32
+  },
+  "pole_classification": {
+    "real_poles": [
+      "(3.0562835065786247e-28+0j)",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j",
+      "0j"
+    ],
+    "complex_poles": [],
+    "total_real": 32,
+    "total_complex": 0
+  },
+  "damping_frequency": [
+    {
+      "pole": "(3.0562835065786247e-28+0j)",
+      "natural_frequency": "3.0562835e-28",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    },
+    {
+      "pole": "0j",
+      "natural_frequency": "0.0",
+      "damping_ratio": -1.0,
+      "damped_frequency": 0.0,
+      "type": "overdamped"
+    }
+  ],
+  "time_constants": [],
+  "frequency_margins": {
+    "gain_margin_db": Infinity,
+    "phase_margin_deg": Infinity,
+    "gain_crossover_freq": 0.0,
+    "phase_crossover_freq": 0.0
+  },
+  "nyquist_stability": {
+    "encirclements": 0,
+    "is_stable_nyquist": true,
+    "distance_to_critical": 2.0,
+    "stability_robustness": 2.0
+  },
+  "step_response_characteristics": {
+    "rise_time": 0.0,
+    "settling_time": 10.0,
+    "overshoot_percent": 0.0,
+    "peak_time": 0.0,
+    "steady_state_value": 1.0,
+    "steady_state_error": 0.0
+  },
+  "controller_design": {
+    "pid": {
+      "kp": 8.002416729852415,
+      "ki": 2.263767108869142,
+      "kd": 3.9999999999999996,
+      "omega_n": 2.828854314002829,
+      "damping": 0.707
+    },
+    "lead_compensator": {
+      "gain": 5.828427124746188,
+      "zero": -1.2659540788820668e-28,
+      "pole": -7.378521092039314e-28,
+      "alpha": 0.17157287525380996,
+      "omega_m": 3.0562835065786247e-28
+    }
+  }
+}

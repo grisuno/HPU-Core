@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "checkpoint_path": "crystal_checkpoints/latest.pth",
+    "epoch": 7196,
+    "timestamp": "2026-01-31T01:15:18.385998",
+    "analysis_version": "1.0.0"
+  },
+  "dirac_distribution": {
+    "num_point_charges": 0,
+    "delta_strength": 0.0,
+    "discrete_mass": 0.0,
+    "continuous_mass": 10.245501518249512,
+    "total_mass": 10.245501518249512
+  },
+  "electric_field": {
+    "max_magnitude": 0.0,
+    "mean_magnitude": 0.0,
+    "std_magnitude": 0.0
+  },
+  "electric_flux": {
+    "flux_outward": 0.0,
+    "flux_inward": 0.0,
+    "flux_net": 0.0,
+    "enclosed_charge": 0.0,
+    "gauss_law_verification": 0.0
+  },
+  "gauss_law": {
+    "total_charge_direct": 10.245501518249512,
+    "enclosed_charge_flux": 0.0,
+    "relative_error": 0.9999999999902396,
+    "is_gauss_consistent": false,
+    "divergence_theorem_holds": "False"
+  },
+  "divergence": {
+    "max": 0.0,
+    "min": 0.0,
+    "mean": 0.0,
+    "std": 0.0
+  }
+}
