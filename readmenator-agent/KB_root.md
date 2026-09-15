@@ -1,0 +1,644 @@
+# Subsystem: root
+
+## app.py
+- Layer: utility
+- Doc: _*_ coding: utf8 _*_
+- Language: py
+- Symbols:
+  - `SimpleConfig` (class, line 29) `class SimpleConfig`
+  - `compute_local_complexity` (method, line 45) `def compute_local_complexity(weights, epsilon)`
+  - `compute_superposition` (method, line 60) `def compute_superposition(weights)`
+  - `HamiltonianOperator` (class, line 88) `class HamiltonianOperator`
+  - `FastDataset` (class, line 113) `class FastDataset(Dataset)`
+  - `SpectralLayer` (class, line 170) `class SpectralLayer(Module)`
+  - `SimpleHamiltonianNet` (class, line 222) `class SimpleHamiltonianNet(Module)`
+  - `train_model` (method, line 260) `def train_model(grid_size, epochs, hidden_dim, num_spectral_layers, lr)`
+  - `main` (method, line 369) `def main()`
+  - `__init__` (method, line 30) `def __init__(self, grid_size, hidden_dim, num_spectral_layers, target_accuracy, learning_rate)`
+  - `__init__` (method, line 91) `def __init__(self, grid_size)`
+  - `_precompute_spectral_operators` (method, line 95) `def _precompute_spectral_operators(self)`
+  - `apply` (method, line 102) `def apply(self, field)`
+  - `time_evolution` (method, line 107) `def time_evolution(self, field, dt)`
+  - `__init__` (method, line 116) `def __init__(self, num_samples, grid_size, time_steps, dt, seed, train_ratio)`
+  - `__len__` (method, line 160) `def __len__(self)`
+  - `__getitem__` (method, line 163) `def __getitem__(self, idx)`
+  - `get_val_batch` (method, line 166) `def get_val_batch(self)`
+  - `__init__` (method, line 173) `def __init__(self, channels, grid_size)`
+  - `forward` (method, line 186) `def forward(self, x)`
+  - `__init__` (method, line 225) `def __init__(self, grid_size, hidden_dim, num_spectral_layers)`
+  - `forward` (method, line 246) `def forward(self, x)`
+
+## check_fase_berry.py
+- Layer: utility
+- Language: py
+- Depends on: `experiment2.py`
+
+## diff_weights.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `analize_checkpoint` (function, line 5) `def analize_checkpoint(path)`
+
+## dirac.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `DiracConfig` (class, line 25) `class DiracConfig`
+  - `DiracDeltaAnalyzer` (class, line 38) `class DiracDeltaAnalyzer`
+  - `DiracVisualizer` (class, line 328) `class DiracVisualizer`
+  - `analyze_checkpoint` (method, line 574) `def analyze_checkpoint(checkpoint_path, output_dir)`
+  - `analyze_multiple_checkpoints` (method, line 620) `def analyze_multiple_checkpoints(checkpoint_dir, n_latest, output_dir)`
+  - `main` (method, line 652) `def main()`
+  - `__init__` (method, line 40) `def __init__(self, checkpoint_path, device)`
+  - `extract_charge_distribution` (method, line 64) `def extract_charge_distribution(self)`
+  - `compute_dirac_delta_approximation` (method, line 77) `def compute_dirac_delta_approximation(self, charge_density)`
+  - `compute_electric_field` (method, line 112) `def compute_electric_field(self, dirac_data, eval_points)`
+  - `compute_electric_flux` (method, line 157) `def compute_electric_flux(self, electric_field, surface_points)`
+  - `compute_divergence` (method, line 192) `def compute_divergence(self, electric_field)`
+  - `verify_gauss_law` (method, line 200) `def verify_gauss_law(self, dirac_data, flux_data)`
+  - `analyze_all` (method, line 223) `def analyze_all(self)`
+  - `_print_report` (method, line 279) `def _print_report(self, results)`
+  - `plot_charge_distribution` (method, line 331) `def plot_charge_distribution(charge_density, point_positions, point_charges, output_path)`
+  - `plot_electric_field` (method, line 379) `def plot_electric_field(electric_field, output_path)`
+  - `plot_divergence` (method, line 441) `def plot_divergence(divergence, output_path)`
+  - `plot_combined_analysis` (method, line 490) `def plot_combined_analysis(charge_density, point_positions, point_charges, electric_field, divergence, output_path)`
+- Depends on: `experiment2.py`
+
+## expand.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `load_config` (function, line 18) `def load_config(toml_path)`
+  - `expand_spectral_weights` (function, line 23) `def expand_spectral_weights(kernel_real, kernel_imag, target_size, source_size)`
+  - `expand_model` (function, line 43) `def expand_model(model, target_resolution, source_resolution)`
+  - `evaluate_model` (function, line 74) `def evaluate_model(model, resolution, device)`
+  - `main` (function, line 105) `def main()`
+
+## experiment.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `Config` (class, line 41) `class Config`
+  - `set_seed` (method, line 88) `def set_seed(seed)`
+  - `setup_logger` (method, line 96) `def setup_logger(name, level)`
+  - `IAnalysisStrategy` (class, line 109) `class IAnalysisStrategy(ABC)`
+  - `IMetricsCalculator` (class, line 115) `class IMetricsCalculator(ABC)`
+  - `HamiltonianOperator` (class, line 121) `class HamiltonianOperator`
+  - `FastDataset` (class, line 146) `class FastDataset(Dataset)`
+  - `SpectralLayer` (class, line 203) `class SpectralLayer(Module)`
+  - `SimpleHamiltonianNet` (class, line 255) `class SimpleHamiltonianNet(Module)`
+  - `LocalComplexityAnalyzer` (class, line 293) `class LocalComplexityAnalyzer`
+  - `SuperpositionAnalyzer` (class, line 310) `class SuperpositionAnalyzer`
+  - `CrystallographyMetrics` (class, line 340) `class CrystallographyMetrics`
+  - `ThermodynamicMetrics` (class, line 444) `class ThermodynamicMetrics`
+  - `SpectroscopyMetrics` (class, line 470) `class SpectroscopyMetrics`
+  - `CheckpointManager` (class, line 500) `class CheckpointManager`
+  - `TrainingMonitor` (class, line 573) `class TrainingMonitor`
+  - `GlassStopper` (class, line 611) `class GlassStopper`
+  - `train_with_early_glass_stop` (method, line 670) `def train_with_early_glass_stop(model, optimizer, seed, epochs)`
+  - `seed_miner` (method, line 803) `def seed_miner(total_attempts)`
+  - `main` (method, line 856) `def main()`
+  - `analyze` (method, line 111) `def analyze(self, model)`
+  - `compute` (method, line 117) `def compute(self, model)`
+  - `__init__` (method, line 124) `def __init__(self, grid_size)`
+  - `_precompute_spectral_operators` (method, line 128) `def _precompute_spectral_operators(self)`
+  - `apply` (method, line 135) `def apply(self, field)`
+  - `time_evolution` (method, line 140) `def time_evolution(self, field, dt)`
+  - `__init__` (method, line 149) `def __init__(self, num_samples, grid_size, time_steps, dt, seed, train_ratio)`
+  - `__len__` (method, line 193) `def __len__(self)`
+  - `__getitem__` (method, line 196) `def __getitem__(self, idx)`
+  - `get_val_batch` (method, line 199) `def get_val_batch(self)`
+  - `__init__` (method, line 206) `def __init__(self, channels, grid_size)`
+  - `forward` (method, line 219) `def forward(self, x)`
+  - `__init__` (method, line 258) `def __init__(self, grid_size, hidden_dim, num_spectral_layers)`
+  - `forward` (method, line 279) `def forward(self, x)`
+  - `compute_local_complexity` (method, line 295) `def compute_local_complexity(weights, epsilon)`
+  - `compute_superposition` (method, line 312) `def compute_superposition(weights)`
+  - `compute_kappa` (method, line 342) `def compute_kappa(model, dataloader, num_batches)`
+  - `compute_discretization_margin` (method, line 378) `def compute_discretization_margin(coeffs)`
+  - `compute_alpha_purity` (method, line 387) `def compute_alpha_purity(coeffs)`
+  - `compute_kappa_quantum` (method, line 394) `def compute_kappa_quantum(coeffs, hbar)`
+  - `compute_poynting_vector` (method, line 411) `def compute_poynting_vector(coeffs)`
+  - `compute_all_metrics` (method, line 426) `def compute_all_metrics(model, dataloader)`
+  - `compute_effective_temperature` (method, line 446) `def compute_effective_temperature(gradient_buffer, learning_rate)`
+  - `compute_specific_heat` (method, line 460) `def compute_specific_heat(loss_history, temp_history, cv_threshold)`
+  - `compute_weight_diffraction` (method, line 472) `def compute_weight_diffraction(coeffs)`
+  - `_compute_spectral_entropy` (method, line 491) `def _compute_spectral_entropy(power_spectrum)`
+  - `__init__` (method, line 501) `def __init__(self, interval_minutes, max_checkpoints)`
+  - `should_save_checkpoint` (method, line 509) `def should_save_checkpoint(self)`
+  - `save_checkpoint` (method, line 514) `def save_checkpoint(self, model, optimizer, epoch, metrics)`
+  - `__init__` (method, line 574) `def __init__(self)`
+  - `update_metrics` (method, line 594) `def update_metrics(self, epoch, loss, val_loss, val_acc, lc, sp, alpha, kappa, delta, temperature, specific_heat, poynting_magnitude)`
+  - `__init__` (method, line 612) `def __init__(self, patience_epochs)`
+  - `should_stop` (method, line 616) `def should_stop(self, epoch, lc, sp, kappa, delta, temp, cv)`
+  - `BoltzmannAnalysisProgram` (class, line 879) `class BoltzmannAnalysisProgram`
+  - `__init__` (method, line 880) `def __init__(self, checkpoint_path, results_dir)`
+  - `load_and_analyze_checkpoint` (method, line 886) `def load_and_analyze_checkpoint(self)`
+  - `dataloader` (method, line 903) `def dataloader()`
+
+## experiment2.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `Config` (class, line 22) `class Config`
+  - `SeedManager` (class, line 74) `class SeedManager`
+  - `LoggerFactory` (class, line 84) `class LoggerFactory`
+  - `IAnalysisStrategy` (class, line 99) `class IAnalysisStrategy(ABC)`
+  - `IMetricsCalculator` (class, line 105) `class IMetricsCalculator(ABC)`
+  - `HamiltonianOperator` (class, line 111) `class HamiltonianOperator`
+  - `HamiltonianDataset` (class, line 133) `class HamiltonianDataset(Dataset)`
+  - `SpectralLayer` (class, line 183) `class SpectralLayer(Module)`
+  - `HamiltonianNeuralNetwork` (class, line 227) `class HamiltonianNeuralNetwork(Module)`
+  - `LocalComplexityAnalyzer` (class, line 257) `class LocalComplexityAnalyzer`
+  - `SuperpositionAnalyzer` (class, line 273) `class SuperpositionAnalyzer`
+  - `CrystallographyMetricsCalculator` (class, line 302) `class CrystallographyMetricsCalculator(IMetricsCalculator)`
+  - `ThermodynamicMetricsCalculator` (class, line 737) `class ThermodynamicMetricsCalculator(IMetricsCalculator)`
+  - `SpectroscopyMetricsCalculator` (class, line 770) `class SpectroscopyMetricsCalculator(IMetricsCalculator)`
+  - `CheckpointManager` (class, line 804) `class CheckpointManager`
+  - `TrainingMetricsMonitor` (class, line 874) `class TrainingMetricsMonitor`
+  - `GlassStateDetector` (class, line 912) `class GlassStateDetector`
+  - `TrainingEngine` (class, line 973) `class TrainingEngine`
+  - `SeedMiningSystem` (class, line 1113) `class SeedMiningSystem`
+  - `SingleExperimentRunner` (class, line 1164) `class SingleExperimentRunner`
+  - `CheckpointAnalyzer` (class, line 1223) `class CheckpointAnalyzer`
+  - `Application` (class, line 1275) `class Application`
+  - `main` (method, line 1334) `def main()`
+  - `set_seed` (method, line 76) `def set_seed(seed)`
+  - `create_logger` (method, line 86) `def create_logger(name, level)`
+  - `analyze` (method, line 101) `def analyze(self, model)`
+  - `compute` (method, line 107) `def compute(self, model)`
+  - `__init__` (method, line 112) `def __init__(self, grid_size)`
+  - `_precompute_spectral_operators` (method, line 116) `def _precompute_spectral_operators(self)`
+  - `apply` (method, line 122) `def apply(self, field)`
+  - `time_evolution` (method, line 127) `def time_evolution(self, field, dt)`
+  - `__init__` (method, line 134) `def __init__(self, num_samples, grid_size, time_steps, dt, train_ratio)`
+  - `__len__` (method, line 173) `def __len__(self)`
+  - `__getitem__` (method, line 176) `def __getitem__(self, idx)`
+  - `get_validation_batch` (method, line 179) `def get_validation_batch(self)`
+  - `__init__` (method, line 184) `def __init__(self, channels, grid_size)`
+  - `forward` (method, line 195) `def forward(self, x)`
+  - `__init__` (method, line 228) `def __init__(self, grid_size, hidden_dim, num_spectral_layers)`
+  - `forward` (method, line 243) `def forward(self, x)`
+  - `compute_local_complexity` (method, line 259) `def compute_local_complexity(weights, epsilon)`
+  - `compute_superposition` (method, line 275) `def compute_superposition(weights)`
+  - `compute` (method, line 303) `def compute(self, model, val_x, val_y)`
+  - `compute_gradient_covariance_kappa` (method, line 311) `def compute_gradient_covariance_kappa(model, dataloader, num_batches)`
+  - `compute_discretization_margin_from_state_dict` (method, line 348) `def compute_discretization_margin_from_state_dict(model)`
+  - `compute_discretization_margin` (method, line 361) `def compute_discretization_margin(coeffs)`
+  - `compute_alpha_purity_from_model` (method, line 373) `def compute_alpha_purity_from_model(model)`
+  - `compute_alpha_purity` (method, line 383) `def compute_alpha_purity(coeffs)`
+  - `compute_kappa` (method, line 393) `def compute_kappa(model, val_x, val_y, num_batches)`
+  - `compute_kappa_quantum` (method, line 464) `def compute_kappa_quantum(model, hbar)`
+  - `compute_kappa_quantum_from_coeffs` (method, line 492) `def compute_kappa_quantum_from_coeffs(coeffs, hbar)`
+  - `_compute_crystallography_metrics` (method, line 511) `def _compute_crystallography_metrics(self, model, val_x, val_y)`
+  - `_check_weight_integrity` (method, line 539) `def _check_weight_integrity(self, model)`
+  - `compute_poynting_vector` (method, line 603) `def compute_poynting_vector(model)`
+  - `compute_all_metrics` (method, line 679) `def compute_all_metrics(model, val_x, val_y)`
+  - `compute` (method, line 738) `def compute(self, model, gradient_buffer, learning_rate, loss_history, temp_history)`
+  - `compute_effective_temperature` (method, line 747) `def compute_effective_temperature(gradient_buffer, learning_rate)`
+  - `compute_specific_heat` (method, line 760) `def compute_specific_heat(loss_history, temp_history, cv_threshold)`
+  - `compute` (method, line 771) `def compute(self, model)`
+  - `compute_weight_diffraction` (method, line 776) `def compute_weight_diffraction(coeffs)`
+  - `_compute_spectral_entropy` (method, line 795) `def _compute_spectral_entropy(power_spectrum)`
+  - `__init__` (method, line 805) `def __init__(self, interval_minutes, max_checkpoints)`
+  - `should_save_checkpoint` (method, line 813) `def should_save_checkpoint(self)`
+  - `save_checkpoint` (method, line 818) `def save_checkpoint(self, model, optimizer, epoch, metrics)`
+  - `__init__` (method, line 875) `def __init__(self)`
+  - `update_metrics` (method, line 895) `def update_metrics(self, epoch, loss, val_loss, val_acc, lc, sp, alpha, kappa, delta, temperature, specific_heat, poynting_magnitude)`
+  - `__init__` (method, line 913) `def __init__(self, patience_epochs)`
+  - `should_stop` (method, line 918) `def should_stop(self, epoch, lc, sp, kappa, delta, temp, cv)`
+  - `is_crystal_formed` (method, line 963) `def is_crystal_formed(self, lc, sp, kappa, delta, temp, cv)`
+  - `__init__` (method, line 974) `def __init__(self, model, optimizer, device, logger)`
+  - `train_epoch` (method, line 997) `def train_epoch(self, dataloader, epoch)`
+  - `validate` (method, line 1027) `def validate(self, val_x, val_y)`
+  - `compute_weight_metrics` (method, line 1040) `def compute_weight_metrics(self)`
+  - `execute_training` (method, line 1056) `def execute_training(self, dataloader, val_x, val_y, epochs, seed, early_stopping)`
+  - `__init__` (method, line 1114) `def __init__(self, max_attempts)`
+  - `mine` (method, line 1118) `def mine(self)`
+  - `__init__` (method, line 1165) `def __init__(self, seed, epochs, grid_size, hidden_dim, num_spectral_layers, learning_rate)`
+  - `run` (method, line 1175) `def run(self)`
+  - `__init__` (method, line 1224) `def __init__(self, checkpoint_path, results_dir)`
+  - `analyze` (method, line 1230) `def analyze(self)`
+  - `__init__` (method, line 1276) `def __init__(self)`
+  - `_create_argument_parser` (method, line 1280) `def _create_argument_parser(self)`
+  - `run` (method, line 1294) `def run(self)`
+  - `safe_compute` (method, line 694) `def safe_compute(func)`
+- Imported by: `check_fase_berry.py`, `dirac.py`, `get_meditions.py`, `hpu_view.py`, `polos.py`, `precision.py`, `refinamiento.py`, `simple_hpu_view.py`, `verify.py`
+
+## export.py
+- Layer: utility
+- Language: py
+
+## get_meditions.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `ThermodynamicConfig` (class, line 28) `class ThermodynamicConfig`
+  - `setup_logger` (method, line 51) `def setup_logger(name, level)`
+  - `ThermodynamicPotential` (class, line 72) `class ThermodynamicPotential`
+  - `CrystallographyMetrics` (class, line 98) `class CrystallographyMetrics`
+  - `ThermodynamicMetrics` (class, line 394) `class ThermodynamicMetrics`
+  - `SpectroscopyMetrics` (class, line 634) `class SpectroscopyMetrics`
+  - `CheckpointVerifier` (class, line 740) `class CheckpointVerifier`
+  - `verify_latest_checkpoints` (method, line 1439) `def verify_latest_checkpoints(checkpoint_dir, n)`
+  - `main` (method, line 1500) `def main()`
+  - `helmholtz_free_energy` (method, line 81) `def helmholtz_free_energy(self)`
+  - `gibbs_free_energy` (method, line 85) `def gibbs_free_energy(self)`
+  - `is_stable` (method, line 90) `def is_stable(self)`
+  - `SpectralCoefficients` (class, line 105) `class SpectralCoefficients`
+  - `compute_kappa` (method, line 127) `def compute_kappa(model, val_x, val_y, num_batches)`
+  - `compute_discretization_margin` (method, line 187) `def compute_discretization_margin(model)`
+  - `compute_alpha_purity` (method, line 203) `def compute_alpha_purity(model)`
+  - `compute_local_complexity` (method, line 214) `def compute_local_complexity(model)`
+  - `compute_kappa_quantum` (method, line 226) `def compute_kappa_quantum(model, hbar)`
+  - `_compute_kappa_iterative` (method, line 255) `def _compute_kappa_iterative(params, hbar, n, max_iters, tol)`
+  - `compute_poynting_vector` (method, line 312) `def compute_poynting_vector(model)`
+  - `compute_all_metrics` (method, line 366) `def compute_all_metrics(model, val_x, val_y)`
+  - `compute_effective_temperature` (method, line 401) `def compute_effective_temperature(gradient_buffer, learning_rate)`
+  - `compute_specific_heat` (method, line 418) `def compute_specific_heat(loss_history, temp_history, cv_threshold)`
+  - `compute_critical_exponents` (method, line 436) `def compute_critical_exponents(temp_history, cv_history, alpha_history)`
+  - `compute_equation_of_state` (method, line 504) `def compute_equation_of_state(temp_eff, alpha, kappa)`
+  - `compute_mutual_information` (method, line 539) `def compute_mutual_information(weights, gradients)`
+  - `estimate_hbar_algorithmic` (method, line 561) `def estimate_hbar_algorithmic(model_complexity, weight_dim, mutual_information)`
+  - `compute_fisher_information_matrix` (method, line 572) `def compute_fisher_information_matrix(model, samples)`
+  - `compute_ricci_curvature` (method, line 593) `def compute_ricci_curvature(fisher_matrix)`
+  - `calculate_carnot_efficiency` (method, line 608) `def calculate_carnot_efficiency(delta_alpha, total_flops, initial_alpha)`
+  - `compute_weight_diffraction` (method, line 640) `def compute_weight_diffraction(model)`
+  - `_compute_spectral_entropy` (method, line 672) `def _compute_spectral_entropy(power_spectrum)`
+  - `extract_lattice_parameters` (method, line 680) `def extract_lattice_parameters(weight_tensor, rank)`
+  - `compute_gibbs_free_energy` (method, line 732) `def compute_gibbs_free_energy(loss, temp, entropy)`
+  - `__init__` (method, line 741) `def __init__(self, checkpoint_path, device)`
+  - `verify_all_metrics` (method, line 782) `def verify_all_metrics(self)`
+  - `_check_weight_integrity` (method, line 849) `def _check_weight_integrity(self)`
+  - `_compute_validation_metrics` (method, line 915) `def _compute_validation_metrics(self)`
+  - `_compute_discretization_metrics` (method, line 942) `def _compute_discretization_metrics(self)`
+  - `_compute_quantization_metrics` (method, line 986) `def _compute_quantization_metrics(self)`
+  - `_compute_loss_metrics` (method, line 1005) `def _compute_loss_metrics(self)`
+  - `_compute_crystallography_metrics` (method, line 1031) `def _compute_crystallography_metrics(self)`
+  - `_compute_thermodynamic_metrics` (method, line 1038) `def _compute_thermodynamic_metrics(self)`
+  - `_approximate_ricci_curvature` (method, line 1113) `def _approximate_ricci_curvature(self)`
+  - `_compute_spectroscopy` (method, line 1134) `def _compute_spectroscopy(self)`
+  - `_compute_thermodynamic_potential` (method, line 1164) `def _compute_thermodynamic_potential(self, results)`
+  - `_compare_with_stored` (method, line 1188) `def _compare_with_stored(self, computed)`
+  - `_check_internal_consistency` (method, line 1226) `def _check_internal_consistency(self, results)`
+  - `_compute_health_score` (method, line 1267) `def _compute_health_score(self, results)`
+  - `_assign_crystallographic_grade` (method, line 1336) `def _assign_crystallographic_grade(self, delta, alpha)`
+  - `_print_report` (method, line 1349) `def _print_report(self, results)`
+  - `from_model` (method, line 112) `def from_model(cls, model)`
+- Depends on: `experiment2.py`
+
+## hamiltonian_mbl.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `HamiltonianArchitectureConfig` (class, line 37) `class HamiltonianArchitectureConfig`
+  - `MBLAnalysisConfig` (class, line 67) `class MBLAnalysisConfig`
+  - `TrainingConfig` (class, line 141) `class TrainingConfig`
+  - `IModel` (class, line 160) `class IModel(Protocol)`
+  - `ILevelSpacingCalculator` (class, line 167) `class ILevelSpacingCalculator(Protocol)`
+  - `IParticipationRatioCalculator` (class, line 173) `class IParticipationRatioCalculator(Protocol)`
+  - `ISyntheticPlanckCalculator` (class, line 179) `class ISyntheticPlanckCalculator(Protocol)`
+  - `IDiscretizationDialAnalyzer` (class, line 185) `class IDiscretizationDialAnalyzer(Protocol)`
+  - `ICheckpointManager` (class, line 191) `class ICheckpointManager(Protocol)`
+  - `ITrainingMetricsCollector` (class, line 199) `class ITrainingMetricsCollector(Protocol)`
+  - `ArchitectureMigrator` (class, line 209) `class ArchitectureMigrator`
+  - `SpectralHamiltonianLayer` (class, line 346) `class SpectralHamiltonianLayer(Module)`
+  - `HamiltonianNeuralNetwork` (class, line 412) `class HamiltonianNeuralNetwork(Module)`
+  - `HamiltonianDataset` (class, line 555) `class HamiltonianDataset`
+  - `LevelSpacingRatioCalculator` (class, line 608) `class LevelSpacingRatioCalculator`
+  - `ParticipationRatioCalculator` (class, line 719) `class ParticipationRatioCalculator`
+  - `SyntheticPlanckConstantCalculator` (class, line 801) `class SyntheticPlanckConstantCalculator`
+  - `DiscretizationDialAnalyzer` (class, line 844) `class DiscretizationDialAnalyzer`
+  - `PurityIndexCalculator` (class, line 947) `class PurityIndexCalculator`
+  - `EffectiveTemperatureCalculator` (class, line 1004) `class EffectiveTemperatureCalculator`
+  - `KrylovComplexityCalculator` (class, line 1048) `class KrylovComplexityCalculator`
+  - `CrystallinityIndexCalculator` (class, line 1089) `class CrystallinityIndexCalculator`
+  - `ResilienceSpectrometer` (class, line 1144) `class ResilienceSpectrometer`
+  - `PhaseClassifier` (class, line 1243) `class PhaseClassifier`
+  - `CheckpointMigrator` (class, line 1270) `class CheckpointMigrator`
+  - `MBLCheckpointManager` (class, line 1310) `class MBLCheckpointManager`
+  - `HamiltonianMBLMetricsCollector` (class, line 1386) `class HamiltonianMBLMetricsCollector`
+  - `HamiltonianTrainer` (class, line 1540) `class HamiltonianTrainer`
+  - `HamiltonianCheckpointAnalyzer` (class, line 1710) `class HamiltonianCheckpointAnalyzer`
+  - `HamiltonianMBLPipeline` (class, line 1875) `class HamiltonianMBLPipeline`
+  - `main` (method, line 2031) `def main()`
+  - `get_input_dim` (method, line 55) `def get_input_dim(self)`
+  - `get_total_parameters` (method, line 59) `def get_total_parameters(self)`
+  - `get_reduced_dimension` (method, line 135) `def get_reduced_dimension(self)`
+  - `get_coefficients` (method, line 162) `def get_coefficients(self)`
+  - `forward` (method, line 163) `def forward(self)`
+  - `calculate` (method, line 169) `def calculate(self, model)`
+  - `calculate` (method, line 175) `def calculate(self, model)`
+  - `calculate` (method, line 181) `def calculate(self, participation_ratio, energy_gap)`
+  - `analyze_robustness` (method, line 187) `def analyze_robustness(self, model, noise_levels)`
+  - `save_checkpoint` (method, line 193) `def save_checkpoint(self, model, epoch, metrics, loss_history, path)`
+  - `load_checkpoint` (method, line 195) `def load_checkpoint(self, path)`
+  - `collect` (method, line 201) `def collect(self, model, loss, epoch, loss_history)`
+  - `__init__` (method, line 214) `def __init__(self, source_config, target_config)`
+  - `migrate_state_dict` (method, line 218) `def migrate_state_dict(self, source_state)`
+  - `_create_default_parameter` (method, line 320) `def _create_default_parameter(self, key)`
+  - `__init__` (method, line 352) `def __init__(self, config)`
+  - `_initialize_spectral_parameters` (method, line 366) `def _initialize_spectral_parameters(self)`
+  - `forward` (method, line 373) `def forward(self, q, p, dt)`
+  - `get_hamiltonian` (method, line 401) `def get_hamiltonian(self, q, p)`
+  - `__init__` (method, line 418) `def __init__(self, config)`
+  - `_initialize_weights` (method, line 438) `def _initialize_weights(self)`
+  - `forward` (method, line 443) `def forward(self, q, p, dt)`
+  - `time_evolution` (method, line 459) `def time_evolution(self, q_initial, p_initial, num_steps, dt)`
+  - `get_hamiltonian` (method, line 474) `def get_hamiltonian(self, q, p)`
+  - `get_coefficients` (method, line 486) `def get_coefficients(self)`
+  - `get_flat_parameters` (method, line 496) `def get_flat_parameters(self)`
+  - `construct_hessian_approximation` (method, line 503) `def construct_hessian_approximation(self, max_dim, method)`
+  - `__init__` (method, line 561) `def __init__(self, grid_size, num_samples, device)`
+  - `generate_harmonic_oscillator` (method, line 567) `def generate_harmonic_oscillator(self, omega)`
+  - `generate_double_well` (method, line 591) `def generate_double_well(self, barrier_height)`
+  - `__init__` (method, line 616) `def __init__(self, config)`
+  - `calculate` (method, line 619) `def calculate(self, model)`
+  - `_construct_hessian_from_weights` (method, line 651) `def _construct_hessian_from_weights(self, model)`
+  - `_compute_eigenvalues` (method, line 666) `def _compute_eigenvalues(self, hessian)`
+  - `_calculate_spacing_ratios` (method, line 671) `def _calculate_spacing_ratios(self, spacings)`
+  - `_classify_phase` (method, line 684) `def _classify_phase(self, mean_ratio)`
+  - `_estimate_brody_parameter` (method, line 699) `def _estimate_brody_parameter(self, ratios)`
+  - `__init__` (method, line 725) `def __init__(self, config)`
+  - `calculate` (method, line 728) `def calculate(self, model)`
+  - `_calculate_ipr` (method, line 771) `def _calculate_ipr(self, coefficients)`
+  - `_calculate_renyi_ipr` (method, line 782) `def _calculate_renyi_ipr(self, coefficients, q)`
+  - `_calculate_fractal_dimension` (method, line 793) `def _calculate_fractal_dimension(self, ipr, n)`
+  - `__init__` (method, line 807) `def __init__(self, config)`
+  - `calculate` (method, line 810) `def calculate(self, participation_ratio, energy_gap)`
+  - `calculate_from_model` (method, line 820) `def calculate_from_model(self, model, level_spacing_results, pr_results)`
+  - `__init__` (method, line 849) `def __init__(self, config)`
+  - `calculate_base_discretization` (method, line 853) `def calculate_base_discretization(self, model)`
+  - `analyze_robustness` (method, line 877) `def analyze_robustness(self, model, noise_levels)`
+  - `_perturb_and_measure` (method, line 921) `def _perturb_and_measure(self, model, noise_level)`
+  - `_delta_to_alpha` (method, line 940) `def _delta_to_alpha(self, delta)`
+  - `__init__` (method, line 950) `def __init__(self, config)`
+  - `calculate` (method, line 953) `def calculate(self, model)`
+  - `_compute_layer_purity` (method, line 982) `def _compute_layer_purity(self, weights)`
+  - `_delta_to_alpha` (method, line 988) `def _delta_to_alpha(self, delta)`
+  - `_assess_purity_quality` (method, line 993) `def _assess_purity_quality(self, alpha, variance)`
+  - `__init__` (method, line 1007) `def __init__(self, config)`
+  - `calculate` (method, line 1010) `def calculate(self, loss_history)`
+  - `__init__` (method, line 1054) `def __init__(self, config)`
+  - `calculate` (method, line 1057) `def calculate(self, model)`
+  - `__init__` (method, line 1095) `def __init__(self, config)`
+  - `calculate` (method, line 1098) `def calculate(self, model)`
+  - `__init__` (method, line 1150) `def __init__(self, config)`
+  - `measure` (method, line 1153) `def measure(self, model)`
+  - `_measure_base_performance` (method, line 1176) `def _measure_base_performance(self, model)`
+  - `_test_perturbation` (method, line 1195) `def _test_perturbation(self, model, dimension, noise_level)`
+  - `_aggregate_by_dimension` (method, line 1220) `def _aggregate_by_dimension(self, results)`
+  - `_aggregate_by_noise` (method, line 1231) `def _aggregate_by_noise(self, results)`
+  - `__init__` (method, line 1246) `def __init__(self, config)`
+  - `classify` (method, line 1249) `def classify(self, alpha, temperature)`
+  - `__init__` (method, line 1273) `def __init__(self, arch_config)`
+  - `migrate` (method, line 1277) `def migrate(self, raw_data, device)`
+  - `_migrate_if_needed` (method, line 1290) `def _migrate_if_needed(self, state_dict, device)`
+  - `__init__` (method, line 1315) `def __init__(self, config, arch_config)`
+  - `should_save_checkpoint` (method, line 1322) `def should_save_checkpoint(self)`
+  - `save_checkpoint` (method, line 1328) `def save_checkpoint(self, model, epoch, metrics, loss_history, checkpoint_dir)`
+  - `load_checkpoint` (method, line 1361) `def load_checkpoint(self, path)`
+  - `__init__` (method, line 1392) `def __init__(self, config)`
+  - `collect` (method, line 1405) `def collect(self, model, loss, epoch, loss_history, step)`
+  - `collect_comprehensive` (method, line 1493) `def collect_comprehensive(self, model, loss, epoch, loss_history, step)`
+  - `_classify_quantum_phase` (method, line 1520) `def _classify_quantum_phase(self, level_spacing, hbar_results)`
+  - `__init__` (method, line 1545) `def __init__(self, model, arch_config, mbl_config, train_config)`
+  - `train_step` (method, line 1571) `def train_step(self, q_batch, p_batch, q_target, p_target)`
+  - `train_epoch` (method, line 1603) `def train_epoch(self, dataset, epoch)`
+  - `_log_metrics` (method, line 1658) `def _log_metrics(self, metrics)`
+  - `train` (method, line 1672) `def train(self, dataset, num_epochs)`
+  - `__init__` (method, line 1713) `def __init__(self, checkpoint_path, arch_config, mbl_config)`
+  - `_load_checkpoint` (method, line 1723) `def _load_checkpoint(self)`
+  - `analyze` (method, line 1763) `def analyze(self)`
+  - `_generate_summary` (method, line 1787) `def _generate_summary(self, metrics)`
+  - `_print_report` (method, line 1807) `def _print_report(self, results)`
+  - `__init__` (method, line 1878) `def __init__(self, arch_config, mbl_config)`
+  - `process_checkpoint` (method, line 1882) `def process_checkpoint(self, checkpoint_path, output_dir)`
+  - `process_directory` (method, line 1901) `def process_directory(self, checkpoint_dir, n_latest, output_dir)`
+  - `generate_summary` (method, line 1941) `def generate_summary(self, all_results, output_dir)`
+  - `_generate_text_report` (method, line 1982) `def _generate_text_report(self, summary, output_dir)`
+
+## hpu_view.py
+- Layer: presentation
+- Language: py
+- Depends on: `experiment2.py`
+
+## install.sh
+- Layer: utility
+- Language: sh
+
+## mining_seeds.py
+- Layer: data_access
+- Language: py
+- Symbols:
+  - `Config` (class, line 41) `class Config`
+  - `set_seed` (method, line 88) `def set_seed(seed)`
+  - `setup_logger` (method, line 96) `def setup_logger(name, level)`
+  - `IAnalysisStrategy` (class, line 109) `class IAnalysisStrategy(ABC)`
+  - `IMetricsCalculator` (class, line 115) `class IMetricsCalculator(ABC)`
+  - `HamiltonianOperator` (class, line 121) `class HamiltonianOperator`
+  - `FastDataset` (class, line 146) `class FastDataset(Dataset)`
+  - `SpectralLayer` (class, line 203) `class SpectralLayer(Module)`
+  - `SimpleHamiltonianNet` (class, line 255) `class SimpleHamiltonianNet(Module)`
+  - `LocalComplexityAnalyzer` (class, line 293) `class LocalComplexityAnalyzer`
+  - `SuperpositionAnalyzer` (class, line 310) `class SuperpositionAnalyzer`
+  - `CrystallographyMetrics` (class, line 340) `class CrystallographyMetrics`
+  - `ThermodynamicMetrics` (class, line 444) `class ThermodynamicMetrics`
+  - `SpectroscopyMetrics` (class, line 470) `class SpectroscopyMetrics`
+  - `CheckpointManager` (class, line 500) `class CheckpointManager`
+  - `TrainingMonitor` (class, line 573) `class TrainingMonitor`
+  - `GlassStopper` (class, line 611) `class GlassStopper`
+  - `train_with_early_glass_stop` (method, line 670) `def train_with_early_glass_stop(model, optimizer, seed, epochs)`
+  - `seed_miner` (method, line 803) `def seed_miner(total_attempts)`
+  - `main` (method, line 856) `def main()`
+  - `analyze` (method, line 111) `def analyze(self, model)`
+  - `compute` (method, line 117) `def compute(self, model)`
+  - `__init__` (method, line 124) `def __init__(self, grid_size)`
+  - `_precompute_spectral_operators` (method, line 128) `def _precompute_spectral_operators(self)`
+  - `apply` (method, line 135) `def apply(self, field)`
+  - `time_evolution` (method, line 140) `def time_evolution(self, field, dt)`
+  - `__init__` (method, line 149) `def __init__(self, num_samples, grid_size, time_steps, dt, seed, train_ratio)`
+  - `__len__` (method, line 193) `def __len__(self)`
+  - `__getitem__` (method, line 196) `def __getitem__(self, idx)`
+  - `get_val_batch` (method, line 199) `def get_val_batch(self)`
+  - `__init__` (method, line 206) `def __init__(self, channels, grid_size)`
+  - `forward` (method, line 219) `def forward(self, x)`
+  - `__init__` (method, line 258) `def __init__(self, grid_size, hidden_dim, num_spectral_layers)`
+  - `forward` (method, line 279) `def forward(self, x)`
+  - `compute_local_complexity` (method, line 295) `def compute_local_complexity(weights, epsilon)`
+  - `compute_superposition` (method, line 312) `def compute_superposition(weights)`
+  - `compute_kappa` (method, line 342) `def compute_kappa(model, dataloader, num_batches)`
+  - `compute_discretization_margin` (method, line 378) `def compute_discretization_margin(coeffs)`
+  - `compute_alpha_purity` (method, line 387) `def compute_alpha_purity(coeffs)`
+  - `compute_kappa_quantum` (method, line 394) `def compute_kappa_quantum(coeffs, hbar)`
+  - `compute_poynting_vector` (method, line 411) `def compute_poynting_vector(coeffs)`
+  - `compute_all_metrics` (method, line 426) `def compute_all_metrics(model, dataloader)`
+  - `compute_effective_temperature` (method, line 446) `def compute_effective_temperature(gradient_buffer, learning_rate)`
+  - `compute_specific_heat` (method, line 460) `def compute_specific_heat(loss_history, temp_history, cv_threshold)`
+  - `compute_weight_diffraction` (method, line 472) `def compute_weight_diffraction(coeffs)`
+  - `_compute_spectral_entropy` (method, line 491) `def _compute_spectral_entropy(power_spectrum)`
+  - `__init__` (method, line 501) `def __init__(self, interval_minutes, max_checkpoints)`
+  - `should_save_checkpoint` (method, line 509) `def should_save_checkpoint(self)`
+  - `save_checkpoint` (method, line 514) `def save_checkpoint(self, model, optimizer, epoch, metrics)`
+  - `__init__` (method, line 574) `def __init__(self)`
+  - `update_metrics` (method, line 594) `def update_metrics(self, epoch, loss, val_loss, val_acc, lc, sp, alpha, kappa, delta, temperature, specific_heat, poynting_magnitude)`
+  - `__init__` (method, line 612) `def __init__(self, patience_epochs)`
+  - `should_stop` (method, line 616) `def should_stop(self, epoch, lc, sp, kappa, delta, temp, cv)`
+  - `BoltzmannAnalysisProgram` (class, line 879) `class BoltzmannAnalysisProgram`
+  - `__init__` (method, line 880) `def __init__(self, checkpoint_path, results_dir)`
+  - `load_and_analyze_checkpoint` (method, line 886) `def load_and_analyze_checkpoint(self)`
+  - `dataloader` (method, line 903) `def dataloader()`
+
+## plank.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `HBarCalculator` (class, line 26) `class HBarCalculator`
+  - `main` (method, line 213) `def main()`
+  - `__init__` (method, line 29) `def __init__(self, checkpoint_path, device)`
+  - `calculate_all` (method, line 54) `def calculate_all(self)`
+  - `print_report` (method, line 170) `def print_report(self, results)`
+
+## polos.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `ControlConfig` (class, line 27) `class ControlConfig`
+  - `TransferFunctionExtractor` (class, line 48) `class TransferFunctionExtractor`
+  - `PoleZeroAnalyzer` (class, line 142) `class PoleZeroAnalyzer`
+  - `FrequencyResponseAnalyzer` (class, line 299) `class FrequencyResponseAnalyzer`
+  - `TimeResponseAnalyzer` (class, line 415) `class TimeResponseAnalyzer`
+  - `ControllerDesigner` (class, line 516) `class ControllerDesigner`
+  - `ControlSystemAnalyzer` (class, line 599) `class ControlSystemAnalyzer`
+  - `ControlVisualizer` (class, line 798) `class ControlVisualizer`
+  - `analyze_checkpoint` (method, line 1152) `def analyze_checkpoint(checkpoint_path, output_dir)`
+  - `analyze_multiple_checkpoints` (method, line 1208) `def analyze_multiple_checkpoints(checkpoint_dir, n_latest, output_dir)`
+  - `main` (method, line 1240) `def main()`
+  - `__init__` (method, line 50) `def __init__(self, model, device)`
+  - `extract_state_space_representation` (method, line 55) `def extract_state_space_representation(self)`
+  - `compute_transfer_function` (method, line 105) `def compute_transfer_function(self, A, B, C, D)`
+  - `__init__` (method, line 144) `def __init__(self, numerator, denominator)`
+  - `_compute_poles_zeros` (method, line 153) `def _compute_poles_zeros(self)`
+  - `analyze_stability` (method, line 166) `def analyze_stability(self)`
+  - `classify_poles` (method, line 207) `def classify_poles(self)`
+  - `compute_damping_frequency` (method, line 238) `def compute_damping_frequency(self)`
+  - `compute_time_constants` (method, line 278) `def compute_time_constants(self)`
+  - `__init__` (method, line 301) `def __init__(self, numerator, denominator)`
+  - `compute_bode_plot_data` (method, line 309) `def compute_bode_plot_data(self)`
+  - `compute_gain_phase_margins` (method, line 328) `def compute_gain_phase_margins(self)`
+  - `compute_nyquist_data` (method, line 357) `def compute_nyquist_data(self)`
+  - `evaluate_nyquist_stability` (method, line 379) `def evaluate_nyquist_stability(self, nyquist_data)`
+  - `__init__` (method, line 417) `def __init__(self, numerator, denominator)`
+  - `compute_step_response` (method, line 425) `def compute_step_response(self)`
+  - `compute_impulse_response` (method, line 441) `def compute_impulse_response(self)`
+  - `analyze_step_response_characteristics` (method, line 457) `def analyze_step_response_characteristics(self, step_data)`
+  - `__init__` (method, line 518) `def __init__(self, poles, zeros)`
+  - `design_pid_controller` (method, line 522) `def design_pid_controller(self, desired_damping, desired_settling_time)`
+  - `design_lead_compensator` (method, line 542) `def design_lead_compensator(self, desired_phase_margin)`
+  - `compute_root_locus` (method, line 572) `def compute_root_locus(self, num, den)`
+  - `__init__` (method, line 601) `def __init__(self, checkpoint_path, device)`
+  - `analyze_complete_system` (method, line 625) `def analyze_complete_system(self)`
+  - `_print_report` (method, line 715) `def _print_report(self, results)`
+  - `plot_pole_zero_map` (method, line 801) `def plot_pole_zero_map(poles, zeros, output_path)`
+  - `plot_bode_diagram` (method, line 865) `def plot_bode_diagram(bode_data, margins, output_path)`
+  - `plot_nyquist_diagram` (method, line 940) `def plot_nyquist_diagram(nyquist_data, output_path)`
+  - `plot_time_responses` (method, line 990) `def plot_time_responses(step_data, impulse_data, output_path)`
+  - `plot_root_locus` (method, line 1036) `def plot_root_locus(root_locus_data, output_path)`
+  - `plot_combined_analysis` (method, line 1096) `def plot_combined_analysis(poles, zeros, bode_data, step_data, output_path)`
+- Depends on: `experiment2.py`
+
+## precision.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `MassiveLambdaConfig` (class, line 26) `class MassiveLambdaConfig`
+  - `CrystallizationLossMassive` (class, line 36) `class CrystallizationLossMassive(Module)`
+  - `ContinuationEngine` (class, line 72) `class ContinuationEngine`
+  - `main` (method, line 506) `def main()`
+  - `__init__` (method, line 37) `def __init__(self, lambda_quant)`
+  - `quantization_penalty` (method, line 42) `def quantization_penalty(self, model)`
+  - `forward` (method, line 54) `def forward(self, predictions, targets, model)`
+  - `__init__` (method, line 73) `def __init__(self, checkpoint_path, device)`
+  - `_setup_logger` (method, line 150) `def _setup_logger(self)`
+  - `_find_latest_checkpoint` (method, line 162) `def _find_latest_checkpoint(self)`
+  - `_compute_initial_metrics` (method, line 191) `def _compute_initial_metrics(self, model)`
+  - `compute_discretization_metrics` (method, line 208) `def compute_discretization_metrics(self)`
+  - `validate` (method, line 241) `def validate(self)`
+  - `train_epoch` (method, line 250) `def train_epoch(self, epoch)`
+  - `refine` (method, line 288) `def refine(self)`
+  - `_save_latest_checkpoint` (method, line 430) `def _save_latest_checkpoint(self, epoch, metrics, val_acc)`
+  - `_save_crystal_checkpoint` (method, line 456) `def _save_crystal_checkpoint(self, epoch, metrics, val_acc, final, force_save, emergency)`
+  - `_compile_results` (method, line 490) `def _compile_results(self, success, final_epoch)`
+- Depends on: `experiment2.py`, `refinamiento.py`
+
+## refinamiento.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `CrystallizationConfig` (class, line 33) `class CrystallizationConfig`
+  - `CrystallizationLoss` (class, line 57) `class CrystallizationLoss(Module)`
+  - `StructuralPruner` (class, line 96) `class StructuralPruner`
+  - `CrystallizationEngine` (class, line 144) `class CrystallizationEngine`
+  - `analyze_discretization` (method, line 498) `def analyze_discretization(checkpoint_path)`
+  - `main` (method, line 575) `def main()`
+  - `__init__` (method, line 62) `def __init__(self, lambda_quant)`
+  - `quantization_penalty` (method, line 67) `def quantization_penalty(self, model)`
+  - `forward` (method, line 81) `def forward(self, predictions, targets, model)`
+  - `__init__` (method, line 98) `def __init__(self, thresholds)`
+  - `should_prune` (method, line 103) `def should_prune(self, epoch)`
+  - `prune` (method, line 107) `def prune(self, model, force_threshold)`
+  - `get_sparsity` (method, line 131) `def get_sparsity(self, model)`
+  - `__init__` (method, line 148) `def __init__(self, checkpoint_path, device)`
+  - `_setup_logger` (method, line 186) `def _setup_logger(self)`
+  - `_load_checkpoint` (method, line 198) `def _load_checkpoint(self)`
+  - `_compute_initial_metrics` (method, line 234) `def _compute_initial_metrics(self, model)`
+  - `compute_discretization_metrics` (method, line 253) `def compute_discretization_metrics(self)`
+  - `validate` (method, line 291) `def validate(self)`
+  - `train_epoch` (method, line 302) `def train_epoch(self, epoch)`
+  - `refine` (method, line 344) `def refine(self)`
+  - `_save_crystal_checkpoint` (method, line 459) `def _save_crystal_checkpoint(self, epoch, metrics, val_acc, final)`
+  - `_compile_results` (method, line 482) `def _compile_results(self, success, final_epoch)`
+- Depends on: `experiment2.py`
+- Imported by: `precision.py`
+
+## simple_hpu_view.py
+- Layer: presentation
+- Language: py
+- Depends on: `experiment2.py`
+
+## test_grokkit.py
+- Layer: testing
+- Language: py
+- Symbols:
+  - `GrokkingValidator` (class, line 41) `class GrokkingValidator`
+  - `run_quick_test` (method, line 507) `def run_quick_test()`
+  - `__init__` (method, line 56) `def __init__(self, weights_dir)`
+  - `load_model` (method, line 64) `def load_model(self)`
+  - `generate_test_dataset` (method, line 119) `def generate_test_dataset(self, num_samples)`
+  - `compute_local_complexity` (method, line 158) `def compute_local_complexity(self, model)`
+  - `compute_superposition` (method, line 181) `def compute_superposition(self, model)`
+  - `compute_operator_error` (method, line 203) `def compute_operator_error(self, model, inputs, targets)`
+  - `compute_spectral_gap` (method, line 228) `def compute_spectral_gap(self, model)`
+  - `run_validation` (method, line 259) `def run_validation(self)`
+  - `generate_report` (method, line 382) `def generate_report(self)`
+- Depends on: `audio/main.py`
+
+## verify.py
+- Layer: utility
+- Language: py
+- Symbols:
+  - `CheckpointVerifier` (class, line 14) `class CheckpointVerifier`
+  - `verify_latest_checkpoints` (method, line 444) `def verify_latest_checkpoints(checkpoint_dir, n)`
+  - `main` (method, line 486) `def main()`
+  - `__init__` (method, line 15) `def __init__(self, checkpoint_path, device)`
+  - `verify_all_metrics` (method, line 50) `def verify_all_metrics(self)`
+  - `_check_weight_integrity` (method, line 101) `def _check_weight_integrity(self)`
+  - `_compute_validation_metrics` (method, line 146) `def _compute_validation_metrics(self)`
+  - `_compute_discretization_metrics` (method, line 173) `def _compute_discretization_metrics(self)`
+  - `_compute_quantization_metrics` (method, line 225) `def _compute_quantization_metrics(self)`
+  - `_compute_loss_metrics` (method, line 244) `def _compute_loss_metrics(self)`
+  - `_compare_with_stored` (method, line 269) `def _compare_with_stored(self, computed)`
+  - `_check_internal_consistency` (method, line 302) `def _check_internal_consistency(self, results)`
+  - `_compute_health_score` (method, line 331) `def _compute_health_score(self, results)`
+  - `_print_report` (method, line 374) `def _print_report(self, results)`
+- Depends on: `experiment2.py`
