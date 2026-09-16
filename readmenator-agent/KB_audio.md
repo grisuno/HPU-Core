@@ -1,0 +1,323 @@
+# Subsystem: audio
+
+## audio/audio_io.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `AudioProcessor` (class, line 31) `class AudioProcessor`
+  - `__init__` (method, line 41) `def __init__(self, config, device)`
+  - `load_audio` (method, line 57) `def load_audio(self, file_path)`
+  - `waveform_to_stft_complex` (method, line 80) `def waveform_to_stft_complex(self, waveform)`
+  - `stft_complex_to_waveform` (method, line 105) `def stft_complex_to_waveform(self, stft_complex)`
+  - `stft_to_magnitude_phase` (method, line 130) `def stft_to_magnitude_phase(self, stft_complex)`
+  - `magnitude_phase_to_stft` (method, line 146) `def magnitude_phase_to_stft(self, magnitude, phase)`
+  - `stft_magnitude_to_model_input` (method, line 161) `def stft_magnitude_to_model_input(self, magnitude)`
+  - `model_output_to_stft_magnitude` (method, line 186) `def model_output_to_stft_magnitude(self, model_output, original_magnitude)`
+  - `waveform_to_mel_spectrogram` (method, line 206) `def waveform_to_mel_spectrogram(self, waveform)`
+  - `save_audio` (method, line 229) `def save_audio(self, waveform, file_path, sample_rate)`
+  - `get_spectrogram_db_range` (method, line 249) `def get_spectrogram_db_range(self, waveform)`
+- Depends on: `audio/config.py`
+- Imported by: `audio/inference.py`, `audio/trainer.py`
+
+## audio/audios.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `HamiltonianConfig` (class, line 48) `class HamiltonianConfig`
+  - `IAudioSource` (class, line 103) `class IAudioSource(ABC)`
+  - `IFieldOperator` (class, line 122) `class IFieldOperator(ABC)`
+  - `IMetricCollector` (class, line 131) `class IMetricCollector(ABC)`
+  - `AudioResampler` (class, line 149) `class AudioResampler`
+  - `WaveFileSource` (class, line 204) `class WaveFileSource(IAudioSource)`
+  - `ComprehensiveMetricCollector` (class, line 278) `class ComprehensiveMetricCollector(IMetricCollector)`
+  - `CheckpointManager` (class, line 326) `class CheckpointManager`
+  - `AudioSpectrogramConverter` (class, line 387) `class AudioSpectrogramConverter`
+  - `HamiltonianAudioProcessor` (class, line 468) `class HamiltonianAudioProcessor`
+  - `main` (method, line 742) `def main()`
+  - `segment_samples` (method, line 89) `def segment_samples(self)`
+  - `freq_bins` (method, line 94) `def freq_bins(self)`
+  - `read_segment` (method, line 107) `def read_segment(self)`
+  - `get_properties` (method, line 112) `def get_properties(self)`
+  - `close` (method, line 117) `def close(self)`
+  - `evolve` (method, line 126) `def evolve(self, field_state)`
+  - `record` (method, line 135) `def record(self, metrics)`
+  - `get_summary` (method, line 140) `def get_summary(self)`
+  - `resample` (method, line 155) `def resample(audio, orig_sr, target_sr)`
+  - `load_wav_with_resample` (method, line 173) `def load_wav_with_resample(file_path, target_sr)`
+  - `__init__` (method, line 210) `def __init__(self, file_path, config)`
+  - `_validate_and_load` (method, line 220) `def _validate_and_load(self)`
+  - `read_segment` (method, line 244) `def read_segment(self)`
+  - `get_properties` (method, line 261) `def get_properties(self)`
+  - `close` (method, line 273) `def close(self)`
+  - `__init__` (method, line 284) `def __init__(self, config)`
+  - `record` (method, line 289) `def record(self, metrics)`
+  - `get_summary` (method, line 298) `def get_summary(self)`
+  - `export_to_json` (method, line 320) `def export_to_json(self, path)`
+  - `__init__` (method, line 331) `def __init__(self, model, config, checkpoint_dir)`
+  - `check_and_save` (method, line 344) `def check_and_save(self, force)`
+  - `_save_checkpoint` (method, line 357) `def _save_checkpoint(self)`
+  - `__init__` (method, line 393) `def __init__(self, config)`
+  - `waveform_to_field` (method, line 396) `def waveform_to_field(self, waveform)`
+  - `field_to_waveform` (method, line 432) `def field_to_waveform(self, field, original_length)`
+  - `_forward_spectrogram` (method, line 458) `def _forward_spectrogram(self, x)`
+  - `_inverse_spectrogram` (method, line 463) `def _inverse_spectrogram(self, spectrogram)`
+  - `__init__` (method, line 475) `def __init__(self, config, model, source)`
+  - `load_model_weights` (method, line 504) `def load_model_weights(self, path)`
+  - `attach_source` (method, line 513) `def attach_source(self, source)`
+  - `process_stream` (method, line 517) `def process_stream(self)`
+  - `_process_single_segment` (method, line 592) `def _process_single_segment(self, waveform, index)`
+  - `_calculate_phase_entropy` (method, line 684) `def _calculate_phase_entropy(self, phase_map)`
+  - `_render_epiphenomena` (method, line 692) `def _render_epiphenomena(self, amplitude, phase, action)`
+  - `export_metrics` (method, line 729) `def export_metrics(self, path)`
+  - `force_checkpoint` (method, line 733) `def force_checkpoint(self)`
+- Depends on: `audio/experiment2.py`
+
+## audio/checkpoint_manager.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `CheckpointManager` (class, line 28) `class CheckpointManager`
+  - `__init__` (method, line 34) `def __init__(self, config)`
+  - `should_save_checkpoint` (method, line 41) `def should_save_checkpoint(self)`
+  - `save_checkpoint` (method, line 46) `def save_checkpoint(self, model, optimizer, scheduler, epoch, step, metrics, current_loss)`
+  - `load_checkpoint` (method, line 98) `def load_checkpoint(self, model, load_best)`
+  - `best_loss` (method, line 156) `def best_loss(self)`
+- Depends on: `audio/config.py`
+- Imported by: `audio/inference.py`, `audio/trainer.py`
+
+## audio/config.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `AudioProcessingConfig` (class, line 18) `class AudioProcessingConfig`
+  - `ModelArchitectureConfig` (class, line 34) `class ModelArchitectureConfig`
+  - `TrainingConfig` (class, line 80) `class TrainingConfig`
+  - `CheckpointConfig` (class, line 109) `class CheckpointConfig`
+  - `VisualizationConfig` (class, line 136) `class VisualizationConfig`
+  - `MetricsConfig` (class, line 158) `class MetricsConfig`
+  - `HamiltonianAudioConfig` (class, line 182) `class HamiltonianAudioConfig`
+  - `validate` (method, line 62) `def validate(self)`
+  - `checkpoint_path` (method, line 121) `def checkpoint_path(self)`
+  - `best_model_path` (method, line 127) `def best_model_path(self)`
+  - `metadata_path` (method, line 131) `def metadata_path(self)`
+  - `validate_all` (method, line 198) `def validate_all(self)`
+  - `ensure_directories` (method, line 206) `def ensure_directories(self)`
+- Imported by: `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/model.py`, `audio/trainer.py`, `audio/visualization.py`
+
+## audio/experiment2.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `Config` (class, line 22) `class Config`
+  - `SeedManager` (class, line 74) `class SeedManager`
+  - `LoggerFactory` (class, line 84) `class LoggerFactory`
+  - `IAnalysisStrategy` (class, line 99) `class IAnalysisStrategy(ABC)`
+  - `IMetricsCalculator` (class, line 105) `class IMetricsCalculator(ABC)`
+  - `HamiltonianOperator` (class, line 111) `class HamiltonianOperator`
+  - `HamiltonianDataset` (class, line 133) `class HamiltonianDataset(Dataset)`
+  - `SpectralLayer` (class, line 183) `class SpectralLayer(Module)`
+  - `HamiltonianNeuralNetwork` (class, line 227) `class HamiltonianNeuralNetwork(Module)`
+  - `LocalComplexityAnalyzer` (class, line 257) `class LocalComplexityAnalyzer`
+  - `SuperpositionAnalyzer` (class, line 273) `class SuperpositionAnalyzer`
+  - `CrystallographyMetricsCalculator` (class, line 302) `class CrystallographyMetricsCalculator(IMetricsCalculator)`
+  - `ThermodynamicMetricsCalculator` (class, line 737) `class ThermodynamicMetricsCalculator(IMetricsCalculator)`
+  - `SpectroscopyMetricsCalculator` (class, line 770) `class SpectroscopyMetricsCalculator(IMetricsCalculator)`
+  - `CheckpointManager` (class, line 804) `class CheckpointManager`
+  - `TrainingMetricsMonitor` (class, line 874) `class TrainingMetricsMonitor`
+  - `GlassStateDetector` (class, line 912) `class GlassStateDetector`
+  - `TrainingEngine` (class, line 973) `class TrainingEngine`
+  - `SeedMiningSystem` (class, line 1113) `class SeedMiningSystem`
+  - `SingleExperimentRunner` (class, line 1164) `class SingleExperimentRunner`
+  - `CheckpointAnalyzer` (class, line 1223) `class CheckpointAnalyzer`
+  - `Application` (class, line 1275) `class Application`
+  - `main` (method, line 1334) `def main()`
+  - `set_seed` (method, line 76) `def set_seed(seed)`
+  - `create_logger` (method, line 86) `def create_logger(name, level)`
+  - `analyze` (method, line 101) `def analyze(self, model)`
+  - `compute` (method, line 107) `def compute(self, model)`
+  - `__init__` (method, line 112) `def __init__(self, grid_size)`
+  - `_precompute_spectral_operators` (method, line 116) `def _precompute_spectral_operators(self)`
+  - `apply` (method, line 122) `def apply(self, field)`
+  - `time_evolution` (method, line 127) `def time_evolution(self, field, dt)`
+  - `__init__` (method, line 134) `def __init__(self, num_samples, grid_size, time_steps, dt, train_ratio)`
+  - `__len__` (method, line 173) `def __len__(self)`
+  - `__getitem__` (method, line 176) `def __getitem__(self, idx)`
+  - `get_validation_batch` (method, line 179) `def get_validation_batch(self)`
+  - `__init__` (method, line 184) `def __init__(self, channels, grid_size)`
+  - `forward` (method, line 195) `def forward(self, x)`
+  - `__init__` (method, line 228) `def __init__(self, grid_size, hidden_dim, num_spectral_layers)`
+  - `forward` (method, line 243) `def forward(self, x)`
+  - `compute_local_complexity` (method, line 259) `def compute_local_complexity(weights, epsilon)`
+  - `compute_superposition` (method, line 275) `def compute_superposition(weights)`
+  - `compute` (method, line 303) `def compute(self, model, val_x, val_y)`
+  - `compute_gradient_covariance_kappa` (method, line 311) `def compute_gradient_covariance_kappa(model, dataloader, num_batches)`
+  - `compute_discretization_margin_from_state_dict` (method, line 348) `def compute_discretization_margin_from_state_dict(model)`
+  - `compute_discretization_margin` (method, line 361) `def compute_discretization_margin(coeffs)`
+  - `compute_alpha_purity_from_model` (method, line 373) `def compute_alpha_purity_from_model(model)`
+  - `compute_alpha_purity` (method, line 383) `def compute_alpha_purity(coeffs)`
+  - `compute_kappa` (method, line 393) `def compute_kappa(model, val_x, val_y, num_batches)`
+  - `compute_kappa_quantum` (method, line 464) `def compute_kappa_quantum(model, hbar)`
+  - `compute_kappa_quantum_from_coeffs` (method, line 492) `def compute_kappa_quantum_from_coeffs(coeffs, hbar)`
+  - `_compute_crystallography_metrics` (method, line 511) `def _compute_crystallography_metrics(self, model, val_x, val_y)`
+  - `_check_weight_integrity` (method, line 539) `def _check_weight_integrity(self, model)`
+  - `compute_poynting_vector` (method, line 603) `def compute_poynting_vector(model)`
+  - `compute_all_metrics` (method, line 679) `def compute_all_metrics(model, val_x, val_y)`
+  - `compute` (method, line 738) `def compute(self, model, gradient_buffer, learning_rate, loss_history, temp_history)`
+  - `compute_effective_temperature` (method, line 747) `def compute_effective_temperature(gradient_buffer, learning_rate)`
+  - `compute_specific_heat` (method, line 760) `def compute_specific_heat(loss_history, temp_history, cv_threshold)`
+  - `compute` (method, line 771) `def compute(self, model)`
+  - `compute_weight_diffraction` (method, line 776) `def compute_weight_diffraction(coeffs)`
+  - `_compute_spectral_entropy` (method, line 795) `def _compute_spectral_entropy(power_spectrum)`
+  - `__init__` (method, line 805) `def __init__(self, interval_minutes, max_checkpoints)`
+  - `should_save_checkpoint` (method, line 813) `def should_save_checkpoint(self)`
+  - `save_checkpoint` (method, line 818) `def save_checkpoint(self, model, optimizer, epoch, metrics)`
+  - `__init__` (method, line 875) `def __init__(self)`
+  - `update_metrics` (method, line 895) `def update_metrics(self, epoch, loss, val_loss, val_acc, lc, sp, alpha, kappa, delta, temperature, specific_heat, poynting_magnitude)`
+  - `__init__` (method, line 913) `def __init__(self, patience_epochs)`
+  - `should_stop` (method, line 918) `def should_stop(self, epoch, lc, sp, kappa, delta, temp, cv)`
+  - `is_crystal_formed` (method, line 963) `def is_crystal_formed(self, lc, sp, kappa, delta, temp, cv)`
+  - `__init__` (method, line 974) `def __init__(self, model, optimizer, device, logger)`
+  - `train_epoch` (method, line 997) `def train_epoch(self, dataloader, epoch)`
+  - `validate` (method, line 1027) `def validate(self, val_x, val_y)`
+  - `compute_weight_metrics` (method, line 1040) `def compute_weight_metrics(self)`
+  - `execute_training` (method, line 1056) `def execute_training(self, dataloader, val_x, val_y, epochs, seed, early_stopping)`
+  - `__init__` (method, line 1114) `def __init__(self, max_attempts)`
+  - `mine` (method, line 1118) `def mine(self)`
+  - `__init__` (method, line 1165) `def __init__(self, seed, epochs, grid_size, hidden_dim, num_spectral_layers, learning_rate)`
+  - `run` (method, line 1175) `def run(self)`
+  - `__init__` (method, line 1224) `def __init__(self, checkpoint_path, results_dir)`
+  - `analyze` (method, line 1230) `def analyze(self)`
+  - `__init__` (method, line 1276) `def __init__(self)`
+  - `_create_argument_parser` (method, line 1280) `def _create_argument_parser(self)`
+  - `run` (method, line 1294) `def run(self)`
+  - `safe_compute` (method, line 694) `def safe_compute(func)`
+- Imported by: `audio/audios.py`
+
+## audio/inference.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `HamiltonianAudioInference` (class, line 37) `class HamiltonianAudioInference`
+  - `__init__` (method, line 42) `def __init__(self, config, load_best)`
+  - `analyze_audio` (method, line 73) `def analyze_audio(self, audio_file_path, output_prefix)`
+  - `_compute_energy_mask_patched` (method, line 158) `def _compute_energy_mask_patched(self, model_input)`
+  - `_extract_hamiltonian_fields_patched` (method, line 209) `def _extract_hamiltonian_fields_patched(self, model_input)`
+  - `_compute_inference_metrics` (method, line 270) `def _compute_inference_metrics(self, original_magnitude, reconstructed_magnitude, original_stft)`
+  - `_print_inference_metrics` (method, line 288) `def _print_inference_metrics(self)`
+- Depends on: `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/metrics.py`, `audio/model.py`, `audio/visualization.py`
+- Imported by: `audio/main.py`
+
+## audio/losses.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `HamiltonianLossComputer` (class, line 28) `class HamiltonianLossComputer`
+  - `__init__` (method, line 37) `def __init__(self, config)`
+  - `compute_total_loss` (method, line 41) `def compute_total_loss(self, prediction, target, intermediates, model)`
+  - `_compute_reconstruction_loss` (method, line 94) `def _compute_reconstruction_loss(self, prediction, target)`
+  - `_compute_energy_conservation_loss` (method, line 100) `def _compute_energy_conservation_loss(self, intermediates)`
+  - `_compute_symplectic_loss` (method, line 122) `def _compute_symplectic_loss(self, intermediates)`
+  - `_compute_spectral_consistency_loss` (method, line 145) `def _compute_spectral_consistency_loss(self, prediction, target)`
+  - `_compute_phase_coherence_loss` (method, line 161) `def _compute_phase_coherence_loss(self, prediction, target)`
+  - `_compute_action_minimization_loss` (method, line 177) `def _compute_action_minimization_loss(self, intermediates)`
+  - `_compute_liouville_loss` (method, line 192) `def _compute_liouville_loss(self, intermediates)`
+  - `_compute_hamiltonian_constraint_loss` (method, line 214) `def _compute_hamiltonian_constraint_loss(self, intermediates)`
+- Depends on: `audio/config.py`
+- Imported by: `audio/trainer.py`
+
+## audio/main.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `build_argument_parser` (function, line 34) `def build_argument_parser()`
+  - `build_config_from_args` (function, line 103) `def build_config_from_args(args)`
+  - `validate_audio_file` (function, line 163) `def validate_audio_file(file_path)`
+  - `print_configuration_banner` (function, line 175) `def print_configuration_banner(config, mode, audio_path)`
+  - `run_training` (function, line 215) `def run_training(args)`
+  - `run_inference` (function, line 226) `def run_inference(args)`
+  - `main` (function, line 236) `def main()`
+- Depends on: `audio/config.py`, `audio/inference.py`, `audio/trainer.py`
+- Imported by: `test_grokkit.py`
+
+## audio/metrics.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `HamiltonianMetricsTracker` (class, line 26) `class HamiltonianMetricsTracker`
+  - `__init__` (method, line 36) `def __init__(self, config)`
+  - `_initialize_history_buffers` (method, line 43) `def _initialize_history_buffers(self)`
+  - `compute_hamiltonian_energy` (method, line 74) `def compute_hamiltonian_energy(self, q, p)`
+  - `compute_symplectic_form` (method, line 97) `def compute_symplectic_form(self, q, p, dq, dp)`
+  - `compute_liouville_measure` (method, line 125) `def compute_liouville_measure(self, jacobian)`
+  - `compute_phase_space_volume` (method, line 153) `def compute_phase_space_volume(self, q, p)`
+  - `compute_action_integral` (method, line 181) `def compute_action_integral(self, q_trajectory, p_trajectory, dt)`
+  - `compute_poisson_bracket` (method, line 208) `def compute_poisson_bracket(self, f_values, g_values, q, p)`
+  - `compute_spectral_entropy` (method, line 238) `def compute_spectral_entropy(self, spectrum)`
+  - `compute_reconstruction_snr` (method, line 259) `def compute_reconstruction_snr(self, original, reconstructed)`
+  - `compute_spectral_convergence` (method, line 281) `def compute_spectral_convergence(self, original_spectrum, reconstructed_spectrum)`
+  - `compute_phase_coherence` (method, line 305) `def compute_phase_coherence(self, phase_original, phase_reconstructed)`
+  - `compute_energy_drift` (method, line 328) `def compute_energy_drift(self, energy_initial, energy_current)`
+  - `record_gradient_norm` (method, line 348) `def record_gradient_norm(self, model_parameters)`
+  - `record_parameter_norm` (method, line 359) `def record_parameter_norm(self, model_parameters)`
+  - `record_learning_rate` (method, line 369) `def record_learning_rate(self, lr)`
+  - `record_loss_component` (method, line 374) `def record_loss_component(self, name, value)`
+  - `_record` (method, line 379) `def _record(self, metric_name, value)`
+  - `get_current_metrics` (method, line 388) `def get_current_metrics(self)`
+  - `get_moving_averages` (method, line 392) `def get_moving_averages(self)`
+  - `get_formatted_metrics_string` (method, line 400) `def get_formatted_metrics_string(self)`
+  - `increment_step` (method, line 413) `def increment_step(self)`
+  - `step_count` (method, line 418) `def step_count(self)`
+  - `should_log` (method, line 421) `def should_log(self)`
+- Depends on: `audio/config.py`
+- Imported by: `audio/inference.py`, `audio/trainer.py`
+
+## audio/model.py
+- Layer: business_logic
+- Language: py
+- Symbols:
+  - `SpectralEvolutionLayer` (class, line 27) `class SpectralEvolutionLayer(Module)`
+  - `HamiltonianNeuralNetwork` (class, line 162) `class HamiltonianNeuralNetwork(Module)`
+  - `__init__` (method, line 36) `def __init__(self, hidden_dim, kernel_base_height, kernel_base_width, init_std)`
+  - `forward` (method, line 51) `def forward(self, x)`
+  - `evolve_complex` (method, line 85) `def evolve_complex(self, x, target_height, target_width)`
+  - `evolve_real` (method, line 124) `def evolve_real(self, x, target_height, target_width)`
+  - `__init__` (method, line 172) `def __init__(self, config)`
+  - `forward` (method, line 200) `def forward(self, x)`
+  - `forward_with_intermediates` (method, line 216) `def forward_with_intermediates(self, x)`
+  - `extract_hamiltonian_fields` (method, line 237) `def extract_hamiltonian_fields(self, x)`
+  - `compute_energy_mask` (method, line 270) `def compute_energy_mask(self, x)`
+- Depends on: `audio/config.py`
+- Imported by: `audio/inference.py`, `audio/trainer.py`
+
+## audio/trainer.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `AudioSpectrogramDatasetBuilder` (class, line 38) `class AudioSpectrogramDatasetBuilder`
+  - `HamiltonianAudioTrainer` (class, line 79) `class HamiltonianAudioTrainer`
+  - `__init__` (method, line 46) `def __init__(self, config)`
+  - `build_dataset` (method, line 49) `def build_dataset(self, mel_spectrogram)`
+  - `__init__` (method, line 92) `def __init__(self, config)`
+  - `_attempt_checkpoint_recovery` (method, line 129) `def _attempt_checkpoint_recovery(self)`
+  - `train` (method, line 151) `def train(self, audio_file_path)`
+  - `_train_one_epoch` (method, line 255) `def _train_one_epoch(self, train_loader, epoch)`
+  - `_validate` (method, line 344) `def _validate(self, val_loader, epoch)`
+  - `model` (method, line 377) `def model(self)`
+  - `audio_processor` (method, line 381) `def audio_processor(self)`
+- Depends on: `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`
+- Imported by: `audio/main.py`
+
+## audio/visualization.py
+- Layer: infrastructure
+- Language: py
+- Symbols:
+  - `HamiltonianAudioVisualizer` (class, line 29) `class HamiltonianAudioVisualizer`
+  - `__init__` (method, line 34) `def __init__(self, vis_config, audio_config)`
+  - `render_complete_analysis` (method, line 43) `def render_complete_analysis(self, amplitude_map, phase_map, action_map, original_spectrogram, reconstructed_spectrogram, original_waveform, reconstructed_waveform, output_prefix)`
+  - `_render_hamiltonian_fields` (method, line 91) `def _render_hamiltonian_fields(self, amplitude_map, phase_map, action_map, output_prefix)`
+  - `_render_spectrogram_comparison` (method, line 140) `def _render_spectrogram_comparison(self, original, reconstructed, output_prefix)`
+  - `_render_phase_portrait` (method, line 185) `def _render_phase_portrait(self, amplitude_map, phase_map, output_prefix)`
+  - `_render_energy_landscape` (method, line 218) `def _render_energy_landscape(self, amplitude_map, action_map, output_prefix)`
+  - `_render_waveform_comparison` (method, line 270) `def _render_waveform_comparison(self, original_waveform, reconstructed_waveform, output_prefix)`
+- Depends on: `audio/config.py`
+- Imported by: `audio/inference.py`
