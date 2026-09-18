@@ -1,0 +1,25 @@
+{
+  "tool": "readmenator",
+  "generated_at": "2026-09-18T07:02:52Z",
+  "project_root": "/tmp/push_HPU-Core_20260918_033829",
+  "files": 32,
+  "symbols": 776,
+  "imports": 6752,
+  "resolved_imports": 33,
+  "security_findings": 0,
+  "languages": {
+    "py": 31,
+    "sh": 1
+  },
+  "entrypoints": [
+    "audio/main.py"
+  ],
+  "start_here": "INDEX.md",
+  "workflow": [
+    "ls *.md readmenator-*/  # orient: docs first, ignore build noise",
+    "grep -n '<keyword>' INDEX.md",
+    "cat KB_<subsystem>.md",
+    "grep -n '<file>' ARCHITECTURE.md SYMBOLS.md"
+  ],
+  "regenerate": "readmenator . --rebuild"
+}
