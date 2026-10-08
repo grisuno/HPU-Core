@@ -1,0 +1,50 @@
+[
+  {
+    "community_a": 1,
+    "community_b": 2,
+    "connection_type": "duplicates",
+    "explanation": "Inferred duplicated scope: communities 1 and 2 share 66 symbols (Jaccard 0.32), e.g. `Application`, `CheckpointAnalyzer`, `CheckpointManager`, `Config`, `CrystallographyMetricsCalculator`, `GlassStateDetector`. Candidate for consolidation.",
+    "strength": 0.53,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 1,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language py and layer utility) with no import path between community 0 (audio: metrics) and community 1 (root).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 2,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language py and layer utility) with no import path between community 0 (audio: metrics) and community 2 (audio: experiment2).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 3,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language py and layer utility) with no import path between community 0 (audio: metrics) and community 3 (orphans).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 1,
+    "community_b": 3,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language py and layer utility) with no import path between community 1 (root) and community 3 (orphans).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 2,
+    "community_b": 3,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language py and layer utility) with no import path between community 2 (audio: experiment2) and community 3 (orphans).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  }
+]

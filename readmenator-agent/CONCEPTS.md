@@ -1,0 +1,120 @@
+# Concepts
+
+Nouns map atomically to file sets (EXTRACTED); verbs aggregate structural edges (INFERRED).
+
+- `compute` | files=19 | mentions=183 | `app.py`, `audio/audio_io.py`, `audio/audios.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`, `dirac.py`, `experiment.py`
+- `checkpoint` | files=19 | mentions=88 | `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/trainer.py`, `diff_weights.py`, `dirac.py`, `experiment.py`, `experiment2.py`
+- `config` | files=19 | mentions=29 | `app.py`, `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/losses.py`, `audio/main.py`, `audio/trainer.py`, `dirac.py`
+- `hamiltonian` | files=18 | mentions=138 | `app.py`, `audio/audio_io.py`, `audio/audios.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/model.py`
+- `all` | files=18 | mentions=47 | `audio/audios.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/trainer.py`, `audio/visualization.py`, `dirac.py`
+- `model` | files=17 | mentions=70 | `app.py`, `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/losses.py`, `audio/model.py`, `audio/trainer.py`
+- `metrics` | files=16 | mentions=91 | `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/metrics.py`, `audio/trainer.py`, `experiment.py`, `experiment2.py`, `get_meditions.py`
+- `spectral` | files=15 | mentions=65 | `app.py`, `audio/audio_io.py`, `audio/experiment2.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/model.py`, `audio/visualization.py`, `expand.py`, `experiment.py`
+- `time` | files=14 | mentions=45 | `app.py`, `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`, `audio/trainer.py`, `experiment.py`
+- `training` | files=13 | mentions=42 | `app.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/trainer.py`, `experiment.py`
+- `network` | files=13 | mentions=26 | `app.py`, `audio/audio_io.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/main.py`, `audio/model.py`, `audio/trainer.py`, `experiment.py`, `experiment2.py`
+- `single` | files=13 | mentions=20 | `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`, `audio/trainer.py`
+- `audio` | files=12 | mentions=93 | `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/model.py`
+- `evolution` | files=12 | mentions=29 | `app.py`, `audio/audio_io.py`, `audio/audios.py`, `audio/experiment2.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`, `audio/visualization.py`, `experiment.py`, `experiment2.py`
+- `state` | files=12 | mentions=20 | `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/experiment2.py`, `audio/losses.py`, `audio/metrics.py`, `experiment.py`, `experiment2.py`, `get_meditions.py`, `hamiltonian_mbl.py`
+- `load` | files=11 | mentions=30 | `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/inference.py`, `audio/trainer.py`, `expand.py`, `experiment.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `refinamiento.py`
+- `forward` | files=11 | mentions=25 | `app.py`, `audio/audios.py`, `audio/experiment2.py`, `audio/losses.py`, `audio/model.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `precision.py`
+- `get` | files=11 | mentions=24 | `app.py`, `audio/audio_io.py`, `audio/audios.py`, `audio/experiment2.py`, `audio/metrics.py`, `experiment.py`, `experiment2.py`, `get_meditions.py`, `hamiltonian_mbl.py`, `mining_seeds.py`
+- `phase` | files=10 | mentions=68 | `audio/audio_io.py`, `audio/audios.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`, `audio/visualization.py`, `hamiltonian_mbl.py`, `polos.py`, `test_grokkit.py`
+- `energy` | files=10 | mentions=47 | `audio/audio_io.py`, `audio/audios.py`, `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/model.py`, `audio/visualization.py`, `get_meditions.py`, `hamiltonian_mbl.py`
+- `returns` | files=10 | mentions=45 | `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`, `audio/trainer.py`, `hamiltonian_mbl.py`, `test_grokkit.py`
+- `args` | files=10 | mentions=43 | `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/model.py`, `audio/trainer.py`, `audio/visualization.py`, `test_grokkit.py`
+- `save` | files=10 | mentions=27 | `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/experiment2.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `precision.py`, `refinamiento.py`
+- `train` | files=10 | mentions=17 | `app.py`, `audio/experiment2.py`, `audio/main.py`, `audio/trainer.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `precision.py`, `refinamiento.py`
+- `check` | files=10 | mentions=14 | `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/experiment2.py`, `check_fase_berry.py`, `experiment.py`, `experiment2.py`, `get_meditions.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `verify.py`
+- `loss` | files=9 | mentions=43 | `audio/checkpoint_manager.py`, `audio/losses.py`, `audio/metrics.py`, `audio/trainer.py`, `get_meditions.py`, `hamiltonian_mbl.py`, `precision.py`, `refinamiento.py`, `verify.py`
+- `operator` | files=9 | mentions=30 | `app.py`, `audio/audios.py`, `audio/experiment2.py`, `expand.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `test_grokkit.py`
+- `weight` | files=9 | mentions=28 | `app.py`, `audio/experiment2.py`, `experiment.py`, `experiment2.py`, `get_meditions.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `test_grokkit.py`, `verify.py`
+- `analyze` | files=9 | mentions=22 | `audio/experiment2.py`, `audio/inference.py`, `dirac.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `polos.py`, `refinamiento.py`
+- `discretization` | files=9 | mentions=18 | `audio/experiment2.py`, `experiment.py`, `experiment2.py`, `get_meditions.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `precision.py`, `refinamiento.py`, `verify.py`
+- `principle` | files=9 | mentions=17 | `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/model.py`, `audio/trainer.py`, `audio/visualization.py`
+- `complete` | files=9 | mentions=15 | `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/model.py`, `audio/trainer.py`, `audio/visualization.py`, `hamiltonian_mbl.py`, `polos.py`, `test_grokkit.py`
+- `module` | files=9 | mentions=11 | `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/trainer.py`, `audio/visualization.py`, `test_grokkit.py`
+- `file` | files=8 | mentions=27 | `audio/audio_io.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/inference.py`, `audio/main.py`, `audio/trainer.py`, `hamiltonian_mbl.py`, `test_grokkit.py`
+- `analysis` | files=8 | mentions=22 | `audio/inference.py`, `audio/model.py`, `audio/visualization.py`, `dirac.py`, `experiment.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `polos.py`
+- `output` | files=8 | mentions=22 | `audio/audio_io.py`, `audio/config.py`, `audio/inference.py`, `audio/losses.py`, `audio/model.py`, `audio/visualization.py`, `hamiltonian_mbl.py`, `test_grokkit.py`
+- `metric` | files=8 | mentions=21 | `app.py`, `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/metrics.py`, `audio/trainer.py`, `experiment.py`, `mining_seeds.py`, `test_grokkit.py`
+- `complexity` | files=8 | mentions=18 | `app.py`, `audio/experiment2.py`, `experiment.py`, `experiment2.py`, `get_meditions.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `test_grokkit.py`
+- `validation` | files=8 | mentions=16 | `app.py`, `audio/config.py`, `audio/experiment2.py`, `audio/trainer.py`, `experiment2.py`, `get_meditions.py`, `test_grokkit.py`, `verify.py`
+- `dataset` | files=8 | mentions=15 | `app.py`, `audio/experiment2.py`, `audio/trainer.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `test_grokkit.py`
+- `layer` | files=8 | mentions=15 | `app.py`, `audio/config.py`, `audio/experiment2.py`, `audio/model.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`
+- `manager` | files=8 | mentions=13 | `audio/audios.py`, `audio/checkpoint_manager.py`, `audio/experiment2.py`, `audio/trainer.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`
+- `follows` | files=8 | mentions=11 | `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/trainer.py`, `audio/visualization.py`
+- `print` | files=8 | mentions=11 | `audio/inference.py`, `audio/main.py`, `dirac.py`, `get_meditions.py`, `hamiltonian_mbl.py`, `plank.py`, `polos.py`, `verify.py`
+- `validate` | files=8 | mentions=11 | `audio/audios.py`, `audio/config.py`, `audio/experiment2.py`, `audio/main.py`, `audio/trainer.py`, `experiment2.py`, `precision.py`, `refinamiento.py`
+- `apply` | files=8 | mentions=8 | `app.py`, `audio/experiment2.py`, `audio/inference.py`, `audio/model.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`
+- `responsibility` | files=8 | mentions=8 | `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/config.py`, `audio/inference.py`, `audio/losses.py`, `audio/metrics.py`, `audio/trainer.py`, `audio/visualization.py`
+- `field` | files=7 | mentions=25 | `audio/audio_io.py`, `audio/audios.py`, `audio/inference.py`, `audio/main.py`, `audio/model.py`, `audio/visualization.py`, `dirac.py`
+- `input` | files=7 | mentions=25 | `audio/audio_io.py`, `audio/audios.py`, `audio/inference.py`, `audio/model.py`, `audio/trainer.py`, `hamiltonian_mbl.py`, `test_grokkit.py`
+- `analyzer` | files=7 | mentions=19 | `audio/experiment2.py`, `dirac.py`, `experiment.py`, `experiment2.py`, `hamiltonian_mbl.py`, `mining_seeds.py`, `polos.py`
+
+## Verb Edges
+
+- `all` --depends_on--> `single` (strength 1.00)
+- `args` --depends_on--> `audio` (strength 1.00)
+- `audio` --depends_on--> `single` (strength 1.00)
+- `hamiltonian` --depends_on--> `audio` (strength 1.00)
+- `all` --depends_on--> `hamiltonian` (strength 0.95)
+- `args` --depends_on--> `principle` (strength 0.95)
+- `args` --depends_on--> `single` (strength 0.95)
+- `audio` --depends_on--> `principle` (strength 0.95)
+- `hamiltonian` --depends_on--> `single` (strength 0.95)
+- `all` --depends_on--> `audio` (strength 0.91)
+- `args` --depends_on--> `hamiltonian` (strength 0.91)
+- `audio` --depends_on--> `hamiltonian` (strength 0.91)
+- `checkpoint` --depends_on--> `single` (strength 0.91)
+- `hamiltonian` --depends_on--> `principle` (strength 0.91)
+- `all` --depends_on--> `model` (strength 0.86)
+- `args` --depends_on--> `follows` (strength 0.86)
+- `args` --depends_on--> `module` (strength 0.86)
+- `args` --depends_on--> `responsibility` (strength 0.86)
+- `audio` --depends_on--> `follows` (strength 0.86)
+- `audio` --depends_on--> `model` (strength 0.86)
+- `audio` --depends_on--> `module` (strength 0.86)
+- `audio` --depends_on--> `responsibility` (strength 0.86)
+- `checkpoint` --depends_on--> `hamiltonian` (strength 0.86)
+- `complete` --depends_on--> `audio` (strength 0.86)
+- `complete` --depends_on--> `single` (strength 0.86)
+- `file` --depends_on--> `audio` (strength 0.86)
+- `metrics` --depends_on--> `single` (strength 0.86)
+- `returns` --depends_on--> `audio` (strength 0.86)
+- `single` --depends_on--> `audio` (strength 0.86)
+- `all` --depends_on--> `principle` (strength 0.82)
+- `args` --depends_on--> `model` (strength 0.82)
+- `complete` --depends_on--> `hamiltonian` (strength 0.82)
+- `complete` --depends_on--> `principle` (strength 0.82)
+- `config` --depends_on--> `single` (strength 0.82)
+- `file` --depends_on--> `single` (strength 0.82)
+- `hamiltonian` --depends_on--> `follows` (strength 0.82)
+- `hamiltonian` --depends_on--> `model` (strength 0.82)
+- `hamiltonian` --depends_on--> `module` (strength 0.82)
+- `hamiltonian` --depends_on--> `responsibility` (strength 0.82)
+- `metrics` --depends_on--> `hamiltonian` (strength 0.82)
+- `model` --depends_on--> `audio` (strength 0.82)
+- `model` --depends_on--> `single` (strength 0.82)
+- `module` --depends_on--> `audio` (strength 0.82)
+- `network` --depends_on--> `audio` (strength 0.82)
+- `principle` --depends_on--> `audio` (strength 0.82)
+- `principle` --depends_on--> `single` (strength 0.82)
+- `returns` --depends_on--> `single` (strength 0.82)
+- `single` --depends_on--> `principle` (strength 0.82)
+- `time` --depends_on--> `single` (strength 0.82)
+- `all` --depends_on--> `config` (strength 0.77)
+
+## Dialectic
+
+- Thesis: `all` centralizes 18 files; Antithesis: `analysis` pulls 8 files with 6 shared (Jaccard 0.30); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `analyze` pulls 9 files with 7 shared (Jaccard 0.35); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `analyzer` pulls 7 files with 6 shared (Jaccard 0.32); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `apply` pulls 8 files with 6 shared (Jaccard 0.30); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `args` pulls 10 files with 7 shared (Jaccard 0.33); Synthesis: should they merge, split by layer, or keep `depends_on` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `audio` pulls 12 files with 9 shared (Jaccard 0.43); Synthesis: should they merge, split by layer, or keep `depends_on` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `check` pulls 10 files with 8 shared (Jaccard 0.40); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `checkpoint` pulls 19 files with 14 shared (Jaccard 0.61); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `complete` pulls 9 files with 7 shared (Jaccard 0.35); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
+- Thesis: `all` centralizes 18 files; Antithesis: `complexity` pulls 8 files with 7 shared (Jaccard 0.37); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
