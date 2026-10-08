@@ -1,0 +1,71 @@
+# Architecture
+
+## Internal Dependencies
+
+- `audio/audio_io.py` -> `audio/config.py`
+- `audio/audios.py` -> `audio/experiment2.py`
+- `audio/checkpoint_manager.py` -> `audio/config.py`
+- `audio/inference.py` -> `audio/audio_io.py`
+- `audio/inference.py` -> `audio/checkpoint_manager.py`
+- `audio/inference.py` -> `audio/config.py`
+- `audio/inference.py` -> `audio/metrics.py`
+- `audio/inference.py` -> `audio/model.py`
+- `audio/inference.py` -> `audio/visualization.py`
+- `audio/losses.py` -> `audio/config.py`
+- `audio/main.py` -> `audio/config.py`
+- `audio/main.py` -> `audio/inference.py`
+- `audio/main.py` -> `audio/trainer.py`
+- `audio/metrics.py` -> `audio/config.py`
+- `audio/model.py` -> `audio/config.py`
+- `audio/trainer.py` -> `audio/audio_io.py`
+- `audio/trainer.py` -> `audio/checkpoint_manager.py`
+- `audio/trainer.py` -> `audio/config.py`
+- `audio/trainer.py` -> `audio/losses.py`
+- `audio/trainer.py` -> `audio/metrics.py`
+- `audio/trainer.py` -> `audio/model.py`
+- `audio/visualization.py` -> `audio/config.py`
+- `check_fase_berry.py` -> `experiment2.py`
+- `dirac.py` -> `experiment2.py`
+- `get_meditions.py` -> `experiment2.py`
+- `hpu_view.py` -> `experiment2.py`
+- `polos.py` -> `experiment2.py`
+- `precision.py` -> `experiment2.py`
+- `precision.py` -> `refinamiento.py`
+- `refinamiento.py` -> `experiment2.py`
+- `simple_hpu_view.py` -> `experiment2.py`
+- `test_grokkit.py` -> `audio/main.py`
+- `verify.py` -> `experiment2.py`
+
+## External Imports
+
+- `app.py` -> argparse, numpy, os, time, torch, torch.nn, torch.nn.functional, torch.optim, torch.utils.data, typing
+- `audio/audio_io.py` -> torch, torchaudio, torchaudio.transforms, typing
+- `audio/audios.py` -> abc, argparse, cv2, dataclasses, json, numpy, os, pathlib, safetensors.torch, scipy, scipy.io, sys, time, torch, torch.nn, torch.nn.functional, typing
+- `audio/checkpoint_manager.py` -> json, os, safetensors.torch, time, torch, torch.nn, typing
+- `audio/config.py` -> dataclasses, os, typing
+- `audio/experiment2.py` -> abc, argparse, collections, dataclasses, datetime, json, logging, numpy, os, time, torch, torch.nn, torch.nn.functional, torch.optim, torch.utils.data, traceback, typing
+- `audio/inference.py` -> os, torch, typing
+- `audio/losses.py` -> torch, torch.nn, torch.nn.functional, typing
+- `audio/main.py` -> argparse, os, sys
+- `audio/metrics.py` -> collections, torch, torch.nn.functional, typing
+- `audio/model.py` -> torch, torch.nn, torch.nn.functional, typing
+- `audio/trainer.py` -> os, time, torch, torch.nn, torch.optim, torch.utils.data, tqdm, typing
+- `audio/visualization.py` -> matplotlib, matplotlib.gridspec, matplotlib.pyplot, numpy, os, torch, typing
+- `check_fase_berry.py` -> cv2, mss, numpy, safetensors.torch, torch, torch.nn.functional
+- `diff_weights.py` -> argparse, numpy, torch
+- `dirac.py` -> argparse, dataclasses, datetime, glob, json, matplotlib.cm, matplotlib.colors, matplotlib.pyplot, mpl_toolkits.mplot3d, numpy, os, pathlib, torch, torch.nn.functional, typing, warnings
+- `expand.py` -> json, main_fast, numpy, os, time, toml, torch, torch.nn.functional, typing
+- `experiment.py` -> abc, argparse, collections, dataclasses, datetime, json, logging, matplotlib.pyplot, numpy, os, pathlib, scipy.linalg, scipy.optimize, scipy.stats, seaborn, sklearn.decomposition, threading, time, torch, torch.nn, torch.nn.functional, torch.optim, torch.utils.data, typing
+- `experiment2.py` -> abc, argparse, collections, dataclasses, datetime, json, logging, numpy, os, time, torch, torch.nn, torch.nn.functional, torch.optim, torch.utils.data, traceback, typing
+- `export.py` -> safetensors.torch, torch
+- `get_meditions.py` -> argparse, collections, dataclasses, datetime, glob, json, logging, numpy, os, pathlib, scipy.linalg, scipy.optimize, scipy.stats, sklearn.decomposition, torch, torch.nn.functional, typing, warnings
+- `hamiltonian_mbl.py` -> argparse, dataclasses, datetime, gc, glob, json, matplotlib.pyplot, numpy, os, pathlib, scipy.linalg, scipy.sparse, scipy.sparse.linalg, scipy.stats, time, torch, torch.nn, torch.nn.functional, typing, warnings
+- `hpu_view.py` -> cv2, mss, numpy, safetensors.torch, torch, torch.nn.functional
+- `mining_seeds.py` -> abc, argparse, collections, dataclasses, datetime, json, logging, matplotlib.pyplot, numpy, os, pathlib, scipy.linalg, scipy.optimize, scipy.stats, seaborn, sklearn.decomposition, threading, time, torch, torch.nn, torch.nn.functional, torch.optim, torch.utils.data, typing
+- `plank.py` -> argparse, datetime, json, numpy, os, torch, typing
+- `polos.py` -> argparse, dataclasses, datetime, glob, json, matplotlib.patches, matplotlib.pyplot, mpl_toolkits.mplot3d, numpy, os, pathlib, scipy, scipy.linalg, scipy.optimize, torch, torch.nn.functional, typing, warnings
+- `precision.py` -> argparse, datetime, glob, json, logging, numpy, os, torch, torch.nn, torch.nn.functional, torch.optim, torch.utils.data, typing
+- `refinamiento.py` -> argparse, collections, datetime, json, logging, numpy, os, time, torch, torch.nn, torch.nn.functional, torch.optim, torch.utils.data, typing
+- `simple_hpu_view.py` -> cv2, mss, numpy, safetensors.torch, torch, torch.nn.functional
+- `test_grokkit.py` -> main_fast, numpy, os, pathlib, sys, torch, torch.nn
+- `verify.py` -> argparse, datetime, glob, json, numpy, os, torch, torch.nn.functional, typing

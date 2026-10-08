@@ -1,0 +1,2806 @@
+{
+  "concepts": [
+    {
+      "name": "compute",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "dirac.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "polos.py",
+        "precision.py",
+        "refinamiento.py",
+        "test_grokkit.py",
+        "verify.py"
+      ],
+      "mentions": 183,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "checkpoint",
+      "files": [
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/trainer.py",
+        "diff_weights.py",
+        "dirac.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "plank.py",
+        "polos.py",
+        "precision.py",
+        "refinamiento.py",
+        "test_grokkit.py",
+        "verify.py"
+      ],
+      "mentions": 88,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "config",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/trainer.py",
+        "dirac.py",
+        "expand.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "polos.py",
+        "precision.py",
+        "refinamiento.py"
+      ],
+      "mentions": 29,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "hamiltonian",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "audio/visualization.py",
+        "expand.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 138,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "all",
+      "files": [
+        "audio/audios.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "audio/visualization.py",
+        "dirac.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "plank.py",
+        "test_grokkit.py",
+        "verify.py"
+      ],
+      "mentions": 47,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "model",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "expand.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 70,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "metrics",
+      "files": [
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "precision.py",
+        "refinamiento.py",
+        "test_grokkit.py",
+        "verify.py"
+      ],
+      "mentions": 91,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "spectral",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/experiment2.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/visualization.py",
+        "expand.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 65,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "time",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/checkpoint_manager.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "polos.py"
+      ],
+      "mentions": 45,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "training",
+      "files": [
+        "app.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py"
+      ],
+      "mentions": 42,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "network",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/main.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 26,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "single",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "audio/visualization.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py"
+      ],
+      "mentions": 20,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "audio",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "audio/visualization.py"
+      ],
+      "mentions": 93,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "evolution",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/experiment2.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/visualization.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py"
+      ],
+      "mentions": 29,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "state",
+      "files": [
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "polos.py"
+      ],
+      "mentions": 20,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "load",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/inference.py",
+        "audio/trainer.py",
+        "expand.py",
+        "experiment.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "refinamiento.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 30,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "forward",
+      "files": [
+        "app.py",
+        "audio/audios.py",
+        "audio/experiment2.py",
+        "audio/losses.py",
+        "audio/model.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "precision.py",
+        "refinamiento.py"
+      ],
+      "mentions": 25,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "get",
+      "files": [
+        "app.py",
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/experiment2.py",
+        "audio/metrics.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "refinamiento.py"
+      ],
+      "mentions": 24,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "phase",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/visualization.py",
+        "hamiltonian_mbl.py",
+        "polos.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 68,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "energy",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/visualization.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py"
+      ],
+      "mentions": 47,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "returns",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "hamiltonian_mbl.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 45,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "args",
+      "files": [
+        "audio/audio_io.py",
+        "audio/checkpoint_manager.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "audio/visualization.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 43,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "save",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/experiment2.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "precision.py",
+        "refinamiento.py"
+      ],
+      "mentions": 27,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "train",
+      "files": [
+        "app.py",
+        "audio/experiment2.py",
+        "audio/main.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "precision.py",
+        "refinamiento.py"
+      ],
+      "mentions": 17,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "check",
+      "files": [
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/experiment2.py",
+        "check_fase_berry.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "verify.py"
+      ],
+      "mentions": 14,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "loss",
+      "files": [
+        "audio/checkpoint_manager.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "precision.py",
+        "refinamiento.py",
+        "verify.py"
+      ],
+      "mentions": 43,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "operator",
+      "files": [
+        "app.py",
+        "audio/audios.py",
+        "audio/experiment2.py",
+        "expand.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 30,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "weight",
+      "files": [
+        "app.py",
+        "audio/experiment2.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py",
+        "verify.py"
+      ],
+      "mentions": 28,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "analyze",
+      "files": [
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "dirac.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "polos.py",
+        "refinamiento.py"
+      ],
+      "mentions": 22,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "discretization",
+      "files": [
+        "audio/experiment2.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "precision.py",
+        "refinamiento.py",
+        "verify.py"
+      ],
+      "mentions": 18,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "principle",
+      "files": [
+        "audio/audio_io.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "audio/visualization.py"
+      ],
+      "mentions": 17,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "complete",
+      "files": [
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/main.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "audio/visualization.py",
+        "hamiltonian_mbl.py",
+        "polos.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 15,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "module",
+      "files": [
+        "audio/audio_io.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "audio/visualization.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 11,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "file",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/inference.py",
+        "audio/main.py",
+        "audio/trainer.py",
+        "hamiltonian_mbl.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 27,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "analysis",
+      "files": [
+        "audio/inference.py",
+        "audio/model.py",
+        "audio/visualization.py",
+        "dirac.py",
+        "experiment.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "polos.py"
+      ],
+      "mentions": 22,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "output",
+      "files": [
+        "audio/audio_io.py",
+        "audio/config.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/model.py",
+        "audio/visualization.py",
+        "hamiltonian_mbl.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 22,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "metric",
+      "files": [
+        "app.py",
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 21,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "complexity",
+      "files": [
+        "app.py",
+        "audio/experiment2.py",
+        "experiment.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 18,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "validation",
+      "files": [
+        "app.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/trainer.py",
+        "experiment2.py",
+        "get_meditions.py",
+        "test_grokkit.py",
+        "verify.py"
+      ],
+      "mentions": 16,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "dataset",
+      "files": [
+        "app.py",
+        "audio/experiment2.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 15,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "layer",
+      "files": [
+        "app.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/model.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py"
+      ],
+      "mentions": 15,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "manager",
+      "files": [
+        "audio/audios.py",
+        "audio/checkpoint_manager.py",
+        "audio/experiment2.py",
+        "audio/trainer.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py"
+      ],
+      "mentions": 13,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "follows",
+      "files": [
+        "audio/audio_io.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "audio/visualization.py"
+      ],
+      "mentions": 11,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "print",
+      "files": [
+        "audio/inference.py",
+        "audio/main.py",
+        "dirac.py",
+        "get_meditions.py",
+        "hamiltonian_mbl.py",
+        "plank.py",
+        "polos.py",
+        "verify.py"
+      ],
+      "mentions": 11,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "validate",
+      "files": [
+        "audio/audios.py",
+        "audio/config.py",
+        "audio/experiment2.py",
+        "audio/main.py",
+        "audio/trainer.py",
+        "experiment2.py",
+        "precision.py",
+        "refinamiento.py"
+      ],
+      "mentions": 11,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "apply",
+      "files": [
+        "app.py",
+        "audio/experiment2.py",
+        "audio/inference.py",
+        "audio/model.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py"
+      ],
+      "mentions": 8,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "responsibility",
+      "files": [
+        "audio/audio_io.py",
+        "audio/checkpoint_manager.py",
+        "audio/config.py",
+        "audio/inference.py",
+        "audio/losses.py",
+        "audio/metrics.py",
+        "audio/trainer.py",
+        "audio/visualization.py"
+      ],
+      "mentions": 8,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "field",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/inference.py",
+        "audio/main.py",
+        "audio/model.py",
+        "audio/visualization.py",
+        "dirac.py"
+      ],
+      "mentions": 25,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "input",
+      "files": [
+        "audio/audio_io.py",
+        "audio/audios.py",
+        "audio/inference.py",
+        "audio/model.py",
+        "audio/trainer.py",
+        "hamiltonian_mbl.py",
+        "test_grokkit.py"
+      ],
+      "mentions": 25,
+      "confidence": "EXTRACTED"
+    },
+    {
+      "name": "analyzer",
+      "files": [
+        "audio/experiment2.py",
+        "dirac.py",
+        "experiment.py",
+        "experiment2.py",
+        "hamiltonian_mbl.py",
+        "mining_seeds.py",
+        "polos.py"
+      ],
+      "mentions": 19,
+      "confidence": "EXTRACTED"
+    }
+  ],
+  "relations": [
+    {
+      "source": "all",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 1.0,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 1.0,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 1.0,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "hamiltonian",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 1.0,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.95,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.95,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.95,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.95,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "hamiltonian",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.95,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.91,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.91,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.91,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "checkpoint",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.91,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/checkpoint_manager.py"
+      ]
+    },
+    {
+      "source": "hamiltonian",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.91,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "model",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "follows",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "module",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "responsibility",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "follows",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "model",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "module",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "responsibility",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "checkpoint",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/config.py",
+        "audio/trainer.py->audio/losses.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "file",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "metrics",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/trainer.py->audio/audio_io.py"
+      ]
+    },
+    {
+      "source": "returns",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "single",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.86,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "model",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "config",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "file",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/main.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "hamiltonian",
+      "target": "follows",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "hamiltonian",
+      "target": "model",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "hamiltonian",
+      "target": "module",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "hamiltonian",
+      "target": "responsibility",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "metrics",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "model",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "model",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "module",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "network",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "principle",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "principle",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "returns",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "single",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "time",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.82,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "config",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/checkpoint_manager.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "network",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/trainer.py->audio/audio_io.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "training",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "checkpoint",
+      "target": "config",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/config.py",
+        "audio/trainer.py->audio/losses.py",
+        "dirac.py->experiment2.py"
+      ]
+    },
+    {
+      "source": "checkpoint",
+      "target": "model",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/config.py",
+        "audio/trainer.py->audio/losses.py"
+      ]
+    },
+    {
+      "source": "compute",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "compute",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "config",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/config.py",
+        "audio/trainer.py->audio/losses.py"
+      ]
+    },
+    {
+      "source": "config",
+      "target": "model",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "file",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "file",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py"
+      ]
+    },
+    {
+      "source": "follows",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "follows",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "follows",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "model",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "module",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "module",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "network",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "network",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "responsibility",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "responsibility",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "responsibility",
+      "target": "single",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "returns",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "returns",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "single",
+      "target": "hamiltonian",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "time",
+      "target": "audio",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "time",
+      "target": "principle",
+      "verb": "depends_on",
+      "strength": 0.77,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "follows",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "metrics",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/trainer.py->audio/checkpoint_manager.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "module",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "all",
+      "target": "responsibility",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "all",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "config",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "network",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "output",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "args",
+      "target": "training",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "all",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "config",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "metrics",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "network",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "output",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "audio",
+      "target": "training",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/metrics.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "checkpoint",
+      "target": "spectral",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/losses.py",
+        "audio/trainer.py->audio/metrics.py",
+        "audio/trainer.py->audio/model.py",
+        "dirac.py->experiment2.py"
+      ]
+    },
+    {
+      "source": "checkpoint",
+      "target": "time",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/model.py",
+        "audio/trainer.py->audio/audio_io.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/losses.py",
+        "audio/trainer.py->audio/metrics.py",
+        "audio/trainer.py->audio/model.py"
+      ]
+    },
+    {
+      "source": "checkpoint",
+      "target": "training",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/config.py",
+        "audio/trainer.py->audio/losses.py",
+        "audio/trainer.py->audio/metrics.py",
+        "dirac.py->experiment2.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "follows",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "model",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/model.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/model.py->audio/config.py",
+        "audio/trainer.py->audio/audio_io.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "module",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "complete",
+      "target": "responsibility",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/inference.py->audio/metrics.py",
+        "audio/inference.py->audio/visualization.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/model.py->audio/config.py"
+      ]
+    },
+    {
+      "source": "compute",
+      "target": "config",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/inference.py->audio/audio_io.py",
+        "audio/inference.py->audio/checkpoint_manager.py",
+        "audio/inference.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/metrics.py->audio/config.py",
+        "audio/model.py->audio/config.py",
+        "dirac.py->experiment2.py",
+        "get_meditions.py->experiment2.py"
+      ]
+    },
+    {
+      "source": "config",
+      "target": "metrics",
+      "verb": "depends_on",
+      "strength": 0.73,
+      "confidence": "INFERRED",
+      "evidence": [
+        "audio/audio_io.py->audio/config.py",
+        "audio/audios.py->audio/experiment2.py",
+        "audio/checkpoint_manager.py->audio/config.py",
+        "audio/losses.py->audio/config.py",
+        "audio/main.py->audio/config.py",
+        "audio/main.py->audio/inference.py",
+        "audio/main.py->audio/trainer.py",
+        "audio/trainer.py->audio/checkpoint_manager.py",
+        "audio/trainer.py->audio/config.py",
+        "audio/trainer.py->audio/metrics.py"
+      ]
+    }
+  ],
+  "dialectic": [
+    "Thesis: `all` centralizes 18 files; Antithesis: `analysis` pulls 8 files with 6 shared (Jaccard 0.30); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `analyze` pulls 9 files with 7 shared (Jaccard 0.35); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `analyzer` pulls 7 files with 6 shared (Jaccard 0.32); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `apply` pulls 8 files with 6 shared (Jaccard 0.30); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `args` pulls 10 files with 7 shared (Jaccard 0.33); Synthesis: should they merge, split by layer, or keep `depends_on` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `audio` pulls 12 files with 9 shared (Jaccard 0.43); Synthesis: should they merge, split by layer, or keep `depends_on` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `check` pulls 10 files with 8 shared (Jaccard 0.40); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `checkpoint` pulls 19 files with 14 shared (Jaccard 0.61); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `complete` pulls 9 files with 7 shared (Jaccard 0.35); Synthesis: should they merge, split by layer, or keep `bridges` explicit?",
+    "Thesis: `all` centralizes 18 files; Antithesis: `complexity` pulls 8 files with 7 shared (Jaccard 0.37); Synthesis: should they merge, split by layer, or keep `bridges` explicit?"
+  ]
+}
