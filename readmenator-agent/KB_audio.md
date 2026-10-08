@@ -1,8 +1,8 @@
 # Subsystem: audio
 
 ## audio/audio_io.py
-- Doc: Audio I/O and Spectral Transform Module.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Audio I/O and Spectral Transform Module.  Core design principle: audio is processed in the COMPLEX STFT domain, which is
 - Language: py
 - Symbols:
   - `AudioProcessor` (class, line 31) `class AudioProcessor`
@@ -21,8 +21,8 @@
 - Imported by: `audio/inference.py`, `audio/trainer.py`
 
 ## audio/audios.py
-- Doc: Hamiltonian Perception Unit - Audio Modality A SOLID-compliant implementation demonstrating that...
-- Layer: utility
+- Layer: infrastructure
+- Doc: Hamiltonian Perception Unit - Audio Modality A SOLID-compliant implementation demonstrating that sensory perception is a
 - Language: py
 - Symbols:
   - `HamiltonianConfig` (class, line 48) `class HamiltonianConfig`
@@ -75,8 +75,8 @@
 - Depends on: `audio/experiment2.py`
 
 ## audio/checkpoint_manager.py
-- Doc: Checkpoint Management Module.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Checkpoint Management Module.  Handles: - Periodic model saving (time-based interval) - Best model tracking - Training s
 - Language: py
 - Symbols:
   - `CheckpointManager` (class, line 28) `class CheckpointManager`
@@ -89,8 +89,8 @@
 - Imported by: `audio/inference.py`, `audio/trainer.py`
 
 ## audio/config.py
-- Doc: Hamiltonian Audio Processing Configuration Module.
 - Layer: infrastructure
+- Doc: Hamiltonian Audio Processing Configuration Module.  Centralizes all hyperparameters, architectural constants, training p
 - Language: py
 - Symbols:
   - `AudioProcessingConfig` (class, line 18) `class AudioProcessingConfig`
@@ -109,8 +109,7 @@
 - Imported by: `audio/audio_io.py`, `audio/checkpoint_manager.py`, `audio/inference.py`, `audio/losses.py`, `audio/main.py`, `audio/metrics.py`, `audio/model.py`, `audio/trainer.py`, `audio/visualization.py`
 
 ## audio/experiment2.py
-- Doc: compute: Implementación de interfaz IMetricsCalculator.
-- Layer: utility
+- Layer: infrastructure
 - Language: py
 - Symbols:
   - `Config` (class, line 22) `class Config`
@@ -177,7 +176,7 @@
   - `should_save_checkpoint` (method, line 813) `def should_save_checkpoint(self)`
   - `save_checkpoint` (method, line 818) `def save_checkpoint(self, model, optimizer, epoch, metrics)`
   - `__init__` (method, line 875) `def __init__(self)`
-  - `update_metrics` (method, line 895) `def update_metrics(self, epoch, loss, val_loss, val_acc, lc, sp, alpha, kappa, delta, temperature, specific_heat...`
+  - `update_metrics` (method, line 895) `def update_metrics(self, epoch, loss, val_loss, val_acc, lc, sp, alpha, kappa, delta, temperature, specific_heat, poynting_magnitude)`
   - `__init__` (method, line 913) `def __init__(self, patience_epochs)`
   - `should_stop` (method, line 918) `def should_stop(self, epoch, lc, sp, kappa, delta, temp, cv)`
   - `is_crystal_formed` (method, line 963) `def is_crystal_formed(self, lc, sp, kappa, delta, temp, cv)`
@@ -199,8 +198,8 @@
 - Imported by: `audio/audios.py`
 
 ## audio/inference.py
-- Doc: Hamiltonian Audio Inference Module.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Hamiltonian Audio Inference Module.  Pipeline (STFT complex domain): 1. Load trained model from checkpoint 2. Load audio
 - Language: py
 - Symbols:
   - `HamiltonianAudioInference` (class, line 37) `class HamiltonianAudioInference`
@@ -214,8 +213,8 @@
 - Imported by: `audio/main.py`
 
 ## audio/losses.py
-- Doc: Hamiltonian Loss Functions Module.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Hamiltonian Loss Functions Module.  Implements the complete loss function from the Hamiltonian mechanics framework: - Re
 - Language: py
 - Symbols:
   - `HamiltonianLossComputer` (class, line 28) `class HamiltonianLossComputer`
@@ -233,8 +232,8 @@
 - Imported by: `audio/trainer.py`
 
 ## audio/main.py
-- Doc: Hamiltonian Audio Processing System - Main Entry Point.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Hamiltonian Audio Processing System - Main Entry Point.  Demonstrates that sensory perception (hearing) is reducible to 
 - Language: py
 - Symbols:
   - `build_argument_parser` (function, line 34) `def build_argument_parser()`
@@ -248,8 +247,8 @@
 - Imported by: `test_grokkit.py`
 
 ## audio/metrics.py
-- Doc: Hamiltonian Metrics Computation and Tracking Module.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Hamiltonian Metrics Computation and Tracking Module.  Implements all physics-based metrics from Hamiltonian mechanics th
 - Language: py
 - Symbols:
   - `HamiltonianMetricsTracker` (class, line 26) `class HamiltonianMetricsTracker`
@@ -281,8 +280,8 @@
 - Imported by: `audio/inference.py`, `audio/trainer.py`
 
 ## audio/model.py
-- Doc: Hamiltonian Neural Network Architecture for Audio Processing.
 - Layer: business_logic
+- Doc: Hamiltonian Neural Network Architecture for Audio Processing.  Implements the spectral-domain Hamiltonian evolution laye
 - Language: py
 - Symbols:
   - `SpectralEvolutionLayer` (class, line 27) `class SpectralEvolutionLayer(Module)`
@@ -300,8 +299,8 @@
 - Imported by: `audio/inference.py`, `audio/trainer.py`
 
 ## audio/trainer.py
-- Doc: Hamiltonian Audio Training Module.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Hamiltonian Audio Training Module.  Orchestrates the complete training pipeline: - Data preparation (audio -> spectrogra
 - Language: py
 - Symbols:
   - `AudioSpectrogramDatasetBuilder` (class, line 38) `class AudioSpectrogramDatasetBuilder`
@@ -319,13 +318,13 @@
 - Imported by: `audio/main.py`
 
 ## audio/visualization.py
-- Doc: Hamiltonian Audio Visualization Module.
-- Layer: utility
+- Layer: infrastructure
+- Doc: Hamiltonian Audio Visualization Module.  Generates scientific visualizations of the Hamiltonian field analysis: - Energy
 - Language: py
 - Symbols:
   - `HamiltonianAudioVisualizer` (class, line 29) `class HamiltonianAudioVisualizer`
   - `__init__` (method, line 34) `def __init__(self, vis_config, audio_config)`
-  - `render_complete_analysis` (method, line 43) `def render_complete_analysis(self, amplitude_map, phase_map, action_map, original_spectrogram...`
+  - `render_complete_analysis` (method, line 43) `def render_complete_analysis(self, amplitude_map, phase_map, action_map, original_spectrogram, reconstructed_spectrogram, original_waveform, reconstructed_waveform, output_prefix)`
   - `_render_hamiltonian_fields` (method, line 91) `def _render_hamiltonian_fields(self, amplitude_map, phase_map, action_map, output_prefix)`
   - `_render_spectrogram_comparison` (method, line 140) `def _render_spectrogram_comparison(self, original, reconstructed, output_prefix)`
   - `_render_phase_portrait` (method, line 185) `def _render_phase_portrait(self, amplitude_map, phase_map, output_prefix)`
